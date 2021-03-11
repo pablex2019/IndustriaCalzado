@@ -1,0 +1,17 @@
+C:\Users\practiaglobal\Desktop\Facultad\Ingenieria del Software\IndustriaCalzado\IndustriaCalzado\bin\Debug\IndustriaCalzado.exe.config
+C:\Users\practiaglobal\Desktop\Facultad\Ingenieria del Software\IndustriaCalzado\IndustriaCalzado\bin\Debug\IndustriaCalzado.exe
+C:\Users\practiaglobal\Desktop\Facultad\Ingenieria del Software\IndustriaCalzado\IndustriaCalzado\bin\Debug\IndustriaCalzado.pdb
+C:\Users\practiaglobal\Desktop\Facultad\Ingenieria del Software\IndustriaCalzado\IndustriaCalzado\bin\Debug\Newtonsoft.Json.dll
+C:\Users\practiaglobal\Desktop\Facultad\Ingenieria del Software\IndustriaCalzado\IndustriaCalzado\bin\Debug\Newtonsoft.Json.xml
+C:\Users\practiaglobal\Desktop\Facultad\Ingenieria del Software\IndustriaCalzado\IndustriaCalzado\obj\Debug\IndustriaCalzado.csprojAssemblyReference.cache
+C:\Users\practiaglobal\Desktop\Facultad\Ingenieria del Software\IndustriaCalzado\IndustriaCalzado\obj\Debug\IndustriaCalzado.IniciarSesion.resources
+C:\Users\practiaglobal\Desktop\Facultad\Ingenieria del Software\IndustriaCalzado\IndustriaCalzado\obj\Debug\IndustriaCalzado.Properties.Resources.resources
+C:\Users\practiaglobal\Desktop\Facultad\Ingenieria del Software\IndustriaCalzado\IndustriaCalzado\obj\Debug\IndustriaCalzado.csproj.GenerateResource.cache
+C:\Users\practiaglobal\Desktop\Facultad\Ingenieria del Software\IndustriaCalzado\IndustriaCalzado\obj\Debug\IndustriaCalzado.csproj.CoreCompileInputs.cache
+C:\Users\practiaglobal\Desktop\Facultad\Ingenieria del Software\IndustriaCalzado\IndustriaCalzado\obj\Debug\IndustriaCalzado.csproj.CopyComplete
+C:\Users\practiaglobal\Desktop\Facultad\Ingenieria del Software\IndustriaCalzado\IndustriaCalzado\obj\Debug\IndustriaCalzado.exe
+C:\Users\practiaglobal\Desktop\Facultad\Ingenieria del Software\IndustriaCalzado\IndustriaCalzado\obj\Debug\IndustriaCalzado.pdb
+C:\Users\practiaglobal\Desktop\Facultad\Ingenieria del Software\IndustriaCalzado\IndustriaCalzado\obj\Debug\IndustriaCalzado.Vista.Panel.resources
+C:\Users\practiaglobal\Desktop\Facultad\Ingenieria del Software\IndustriaCalzado\IndustriaCalzado\obj\Debug\IndustriaCalzado.Vista.Color.Indice.resources
+C:\Users\practiaglobal\Desktop\Facultad\Ingenieria del Software\IndustriaCalzado\IndustriaCalzado\obj\Debug\IndustriaCalzado.Vista.Color.Nuevo.resources
+C:\Users\practiaglobal\Desktop\Facultad\Ingenieria del Software\IndustriaCalzado\IndustriaCalzado\obj\Debug\IndustriaCalzado.Vista.Color.Editar.resources
