@@ -25,9 +25,9 @@ namespace IndustriaCalzado.Vista.Color
 
         private void Editar_Load(object sender, EventArgs e)
         {
-                var color = ColorController.ObtenerColor(Codigo);
-                txtCodigo.Text = color.Codigo.ToString();
-                txtDescripcion.Text = color.Descripcion;
+           var color = ColorController.ObtenerColor(Codigo);
+           txtCodigo.Text = color.Codigo.ToString();
+           txtDescripcion.Text = color.Descripcion;
         }
 
         private void btnGuardar_Click(object sender, EventArgs e)

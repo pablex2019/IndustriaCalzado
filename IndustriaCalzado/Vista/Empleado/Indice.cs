@@ -22,6 +22,10 @@ namespace IndustriaCalzado.Vista.Empleado
             InitializeComponent();
             EmpleadoController = new EmpleadoController("Empleado");
         }
+        private void dgvEmpleado_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            Documento = Convert.ToInt32(dgvEmpleado.Rows[e.RowIndex].Cells[1].Value.ToString());
+        }
         private void btnNuevo_Click(object sender, EventArgs e)
         {
             Vista.Empleado.Nuevo nuevo = new Vista.Empleado.Nuevo();
@@ -33,8 +37,8 @@ namespace IndustriaCalzado.Vista.Empleado
         {
             if (Documento != 0)
             {
-                Color.Editar Editar = new Color.Editar();
-                Editar.Codigo = Documento;
+                Vista.Empleado.Editar Editar = new Vista.Empleado.Editar();
+                Editar.Documento = Documento;
                 Editar.Grilla = dgvEmpleado;
                 Editar.Show();
             }

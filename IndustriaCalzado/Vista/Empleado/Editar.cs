@@ -1,4 +1,5 @@
-﻿using System;
+﻿using IndustriaCalzado.Controlador;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,9 +13,14 @@ namespace IndustriaCalzado.Vista.Empleado
 {
     public partial class Editar : Form
     {
+        public int Documento;
+        public DataGridView Grilla;
+        private EmpleadoController EmpleadoController;
+
         public Editar()
         {
             InitializeComponent();
+            EmpleadoController = new EmpleadoController("Empleado");
         }
     }
 }

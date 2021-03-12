@@ -6,10 +6,12 @@ using System.Threading.Tasks;
 
 namespace IndustriaCalzado.Modelo
 {
-    public class PerfilModel
+    public class TurnoModel
     {
         public int Id { get; set; }
         public string Descripcion { get; set; }
-        public bool Estado { get; set; }
+        public string HoraDesde { get; set; }
+        public string HoraHasta { get; set; }
+        public string Estado { get; set; }
     }
 }

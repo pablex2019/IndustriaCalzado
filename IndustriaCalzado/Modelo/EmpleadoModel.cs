@@ -14,8 +14,9 @@ namespace IndustriaCalzado.Modelo
         public string Apellidos { get; set; }
         public string CorreoElectronico { get; set; }
         public string Sexo { get; set; }
-        public UsuarioModel UsuarioModel { get; set; }
         public PerfilModel PerfilModel { get; set; }
+        public TurnoModel TurnoModel { get; set; }
+        public UsuarioModel UsuarioModel { get; set; }
         public bool Estado { get; set; }
     }
 }
