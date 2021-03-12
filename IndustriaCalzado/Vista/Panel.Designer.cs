@@ -30,8 +30,8 @@
         {
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.mnuColor = new System.Windows.Forms.ToolStripMenuItem();
-            this.modeloToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.empleadoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuModelo = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuEmpleado = new System.Windows.Forms.ToolStripMenuItem();
             this.ordenesDeProducciónToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.lineaDeTrabajoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuCerrarSesion = new System.Windows.Forms.ToolStripMenuItem();
@@ -42,8 +42,8 @@
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.mnuColor,
-            this.modeloToolStripMenuItem,
-            this.empleadoToolStripMenuItem,
+            this.mnuModelo,
+            this.mnuEmpleado,
             this.ordenesDeProducciónToolStripMenuItem,
             this.lineaDeTrabajoToolStripMenuItem,
             this.mnuCerrarSesion});
@@ -60,17 +60,19 @@
             this.mnuColor.Text = "Color";
             this.mnuColor.Click += new System.EventHandler(this.mnuColor_Click);
             // 
-            // modeloToolStripMenuItem
+            // mnuModelo
             // 
-            this.modeloToolStripMenuItem.Name = "modeloToolStripMenuItem";
-            this.modeloToolStripMenuItem.Size = new System.Drawing.Size(60, 20);
-            this.modeloToolStripMenuItem.Text = "Modelo";
+            this.mnuModelo.Name = "mnuModelo";
+            this.mnuModelo.Size = new System.Drawing.Size(60, 20);
+            this.mnuModelo.Text = "Modelo";
+            this.mnuModelo.Click += new System.EventHandler(this.mnuModelo_Click);
             // 
-            // empleadoToolStripMenuItem
+            // mnuEmpleado
             // 
-            this.empleadoToolStripMenuItem.Name = "empleadoToolStripMenuItem";
-            this.empleadoToolStripMenuItem.Size = new System.Drawing.Size(72, 20);
-            this.empleadoToolStripMenuItem.Text = "Empleado";
+            this.mnuEmpleado.Name = "mnuEmpleado";
+            this.mnuEmpleado.Size = new System.Drawing.Size(72, 20);
+            this.mnuEmpleado.Text = "Empleado";
+            this.mnuEmpleado.Click += new System.EventHandler(this.mnuEmpleado_Click);
             // 
             // ordenesDeProducciónToolStripMenuItem
             // 
@@ -116,8 +118,8 @@
 
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem mnuColor;
-        private System.Windows.Forms.ToolStripMenuItem modeloToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem empleadoToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem mnuModelo;
+        private System.Windows.Forms.ToolStripMenuItem mnuEmpleado;
         private System.Windows.Forms.ToolStripMenuItem ordenesDeProducciónToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem lineaDeTrabajoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem mnuCerrarSesion;

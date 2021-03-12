@@ -31,5 +31,15 @@ namespace IndustriaCalzado.Vista
             UsuarioController.Salir("Usuario", this);
             ColorController.Salir("Color");
         }
+
+        private void mnuModelo_Click(object sender, EventArgs e)
+        {
+            new Modelo.Indice().Show();
+        }
+
+        private void mnuEmpleado_Click(object sender, EventArgs e)
+        {
+            new Empleado.Indice().Show();
+        }
     }
 }

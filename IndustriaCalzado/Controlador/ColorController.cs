@@ -36,7 +36,14 @@ namespace IndustriaCalzado.Controlador
         public int ObtenerUltimoIdColor()
         {
             Leer();
-            return ListaColores.Count > 1 ? ListaColores.Max(x => x.Id) + 1 : 1;
+            if (ListaColores.Count == 0)
+            {
+                return 1;
+            }
+            else
+            {
+                return ListaColores.Max(x => x.Id) + 1;
+            }
         }
         public List<ColorModel> Listado()
         {
@@ -59,7 +66,7 @@ namespace IndustriaCalzado.Controlador
                 }
                 else
                 {
-                    MessageBox.Show("Color existente", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Ya existe el color", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         }

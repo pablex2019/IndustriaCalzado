@@ -4638,23 +4638,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\practiaglobal\\.nuget\\packages\\": {},
+    "C:\\Users\\proda\\.nuget\\packages\\": {},
     "C:\\Microsoft\\Xamarin\\NuGet\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\practiaglobal\\Desktop\\Facultad\\Ingenieria del Software\\IndustriaCalzado\\IndustriaCalzado.Tests\\IndustriaCalzado.Tests.csproj",
+      "projectUniqueName": "C:\\Users\\proda\\Desktop\\Archivos\\Facultad\\IndustriaCalzado\\IndustriaCalzado.Tests\\IndustriaCalzado.Tests.csproj",
       "projectName": "IndustriaCalzado.Tests",
-      "projectPath": "C:\\Users\\practiaglobal\\Desktop\\Facultad\\Ingenieria del Software\\IndustriaCalzado\\IndustriaCalzado.Tests\\IndustriaCalzado.Tests.csproj",
-      "packagesPath": "C:\\Users\\practiaglobal\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\practiaglobal\\Desktop\\Facultad\\Ingenieria del Software\\IndustriaCalzado\\IndustriaCalzado.Tests\\obj\\",
+      "projectPath": "C:\\Users\\proda\\Desktop\\Archivos\\Facultad\\IndustriaCalzado\\IndustriaCalzado.Tests\\IndustriaCalzado.Tests.csproj",
+      "packagesPath": "C:\\Users\\proda\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\proda\\Desktop\\Archivos\\Facultad\\IndustriaCalzado\\IndustriaCalzado.Tests\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Microsoft\\Xamarin\\NuGet\\"
       ],
       "configFilePaths": [
-        "C:\\Users\\practiaglobal\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\proda\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
       ],
@@ -4668,8 +4668,8 @@
       "frameworks": {
         "netcoreapp3.1": {
           "projectReferences": {
-            "C:\\Users\\practiaglobal\\Desktop\\Facultad\\Ingenieria del Software\\IndustriaCalzado\\IndustriaCalzado\\IndustriaCalzado.csproj": {
-              "projectPath": "C:\\Users\\practiaglobal\\Desktop\\Facultad\\Ingenieria del Software\\IndustriaCalzado\\IndustriaCalzado\\IndustriaCalzado.csproj"
+            "C:\\Users\\proda\\Desktop\\Archivos\\Facultad\\IndustriaCalzado\\IndustriaCalzado\\IndustriaCalzado.csproj": {
+              "projectPath": "C:\\Users\\proda\\Desktop\\Archivos\\Facultad\\IndustriaCalzado\\IndustriaCalzado\\IndustriaCalzado.csproj"
             }
           }
         }
