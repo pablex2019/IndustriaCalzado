@@ -52,6 +52,7 @@
     <Compile Include="Controlador\ColorController.cs" />
     <Compile Include="Controlador\EmpleadoController.cs" />
     <Compile Include="Controlador\ModeloController.cs" />
+    <Compile Include="Controlador\PerfilController.cs" />
     <Compile Include="Controlador\UsuarioController.cs" />
     <Compile Include="Modelo\ColorModel.cs" />
     <Compile Include="Modelo\EmpleadoModel.cs" />
@@ -147,11 +148,23 @@
     <Compile Include="Vista\Panel.Designer.cs">
       <DependentUpon>Panel.cs</DependentUpon>
     </Compile>
+    <Compile Include="Vista\Perfil\Editar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\Perfil\Editar.Designer.cs">
+      <DependentUpon>Editar.cs</DependentUpon>
+    </Compile>
     <Compile Include="Vista\Perfil\Indice.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Vista\Perfil\Indice.Designer.cs">
       <DependentUpon>Indice.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Perfil\Nuevo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\Perfil\Nuevo.Designer.cs">
+      <DependentUpon>Nuevo.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Vista\Color\Editar.resx">
       <DependentUpon>Editar.cs</DependentUpon>
@@ -198,8 +211,14 @@
     <EmbeddedResource Include="Vista\Panel.resx">
       <DependentUpon>Panel.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Perfil\Editar.resx">
+      <DependentUpon>Editar.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Vista\Perfil\Indice.resx">
       <DependentUpon>Indice.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Perfil\Nuevo.resx">
+      <DependentUpon>Nuevo.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using IndustriaCalzado.Controlador;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -19,6 +20,7 @@ namespace IndustriaCalzado.Vista.Perfil
         public Indice()
         {
             InitializeComponent();
+            PerfilController = new PerfilController("Perfil");
         }
 
         private void btnSalir_Click(object sender, EventArgs e)
@@ -29,6 +31,18 @@ namespace IndustriaCalzado.Vista.Perfil
         private void btnEliminar_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnNuevo_Click(object sender, EventArgs e)
+        {
+            Perfil.Nuevo nuevo = new Perfil.Nuevo();
+            nuevo.Grilla = dgvPerfiles;
+            nuevo.Show();
+        }
+
+        private void Indice_Load(object sender, EventArgs e)
+        {
+            dgvPerfiles.DataSource = PerfilController.Listado();
         }
     }
 }

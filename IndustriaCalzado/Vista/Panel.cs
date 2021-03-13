@@ -41,5 +41,10 @@ namespace IndustriaCalzado.Vista
         {
             new Empleado.Indice().Show();
         }
+
+        private void mnuPerfil_Click(object sender, EventArgs e)
+        {
+            new Perfil.Indice().Show();
+        }
     }
 }

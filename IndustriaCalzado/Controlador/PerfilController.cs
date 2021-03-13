@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace IndustriaCalzado.Controlador
 {
@@ -49,23 +50,23 @@ namespace IndustriaCalzado.Controlador
             Leer();
             return ListaPerfiles.Where(x => x.Estado != true).ToList();
         }
-        public PerfilModel ObtenerColor(int Codigo)
+        public PerfilModel ObtenerPerfil(string Descrípcion)
         {
             Leer();
-            return ListaPerfiles.FirstOrDefault(x => x.Codigo == Codigo);
+            return ListaPerfiles.FirstOrDefault(x => x.Descripcion == Descrípcion);
         }
-        public void Existe(Vista.Color.Nuevo Nuevo, DataGridView Grilla)
+        public void Existe(Vista.Perfil.Nuevo Nuevo, DataGridView Grilla)
         {
             Leer();
-            if (ListaColores.Count >= 0)
+            if (ListaPerfiles.Count >= 0)
             {
-                if (ListaColores.Any(x => x.Codigo == Convert.ToInt32(Nuevo.txtCodigo.Text) || x.Descripcion == Nuevo.txtDescripcion.Text) == false)
+                if (ListaPerfiles.Any(x => x.Descripcion == Nuevo.txtDescripcion.Text)==false)
                 {
-                    ABM(1, Nuevo, null, 0, Grilla);
+                    ABM(1, Nuevo, null, string.Empty, Grilla);
                 }
                 else
                 {
-                    MessageBox.Show("Ya existe el color", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Ya existe el perfil", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         }
@@ -75,43 +76,42 @@ namespace IndustriaCalzado.Controlador
         /// </summary>
         /// <param name="Operacion"></param>
         /// <param name="Nuevo"></param>
-        public void ABM(int Operacion, Vista.Color.Nuevo Nuevo, Vista.Color.Editar Editar, int Codigo, DataGridView Grilla)
+        public void ABM(int Operacion, Vista.Perfil.Nuevo Nuevo, Vista.Perfil.Editar Editar, string Descripcion, DataGridView Grilla)
         {
-            ColorModel color = new ColorModel();
-            if (Codigo != 0 || Operacion != 3)
+            PerfilModel perfil = new PerfilModel();
+            if (!string.IsNullOrEmpty(Descripcion) || Operacion != 3)
             {
                 switch (Operacion)
                 {
 
                     case 1:
-                        color.Id = ObtenerUltimoIdColor();
-                        color.Codigo = Convert.ToInt32(Nuevo.txtCodigo.Text);
-                        color.Descripcion = Nuevo.txtDescripcion.Text;
-                        color.Estado = false;
-                        ListaColores.Add(color);
-                        MessageBox.Show("Color Agregado", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        Grilla.DataSource = ListaColores.ToList();
+                        perfil.Id = ObtenerUltimoIdPerfil();
+                        perfil.Descripcion = Nuevo.txtDescripcion.Text;
+                        perfil.Estado = false;
+                        ListaPerfiles.Add(perfil);
+                        MessageBox.Show("Perfil Agregado", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        Grilla.DataSource = ListaPerfiles.ToList();
                         break;
                     case 2:
-                        color = ObtenerColor(Codigo);
-                        color.Codigo = Convert.ToInt32(Editar.txtCodigo.Text);
-                        color.Descripcion = Editar.txtDescripcion.Text;
-                        MessageBox.Show("Color Editado", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        Grilla.DataSource = ListaColores.ToList();
+                        perfil = ObtenerPerfil(Descripcion);
+                        perfil.Descripcion = Editar.txtDescripcion.Text;
+                        perfil.Estado = false;
+                        MessageBox.Show("Perfil Editado", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        Grilla.DataSource = ListaPerfiles.ToList();
                         Editar.Close();
                         break;
                     case 3:
-                        color = ObtenerColor(Codigo);
-                        color.Estado = true;
-                        MessageBox.Show("Color Eliminado", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        Grilla.DataSource = ListaColores.ToList();
+                        perfil = ObtenerPerfil(Descripcion);
+                        perfil.Estado = true;
+                        MessageBox.Show("Perfil Eliminado", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        Grilla.DataSource = ListaPerfiles.ToList();
                         break;
                 }
                 Guardar();
             }
             else
             {
-                MessageBox.Show("Debe seleccionar un color", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Debe seleccionar un perfil", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
         public void Salir(string valor)

@@ -60,7 +60,7 @@ namespace IndustriaCalzado.Controlador
             Leer();
             if (ListaEmpleados.Count >= 0)
             {
-                if (ListaEmpleados.Any(x => x.Documento == Convert.ToInt32(Nuevo.txtCodigo.Text) || x.Sexo = Nuevo.ControlBox.ToString()) == false)
+                if (ListaEmpleados.Any(x => x.Documento == Convert.ToInt32(Nuevo.txtDocumento.Text) || x.Sexo == Nuevo.ControlBox.ToString() == false))
                 {
                     ABM(1, Nuevo, null, 0, Grilla);
                 }
@@ -78,42 +78,42 @@ namespace IndustriaCalzado.Controlador
         /// <param name="Nuevo"></param>
         public void ABM(int Operacion, Vista.Empleado.Nuevo Nuevo, Vista.Color.Editar Editar, int Codigo, DataGridView Grilla)
         {
-            EmpleadoModel empleado = new EmpleadoModel();
-            if (Codigo != 0 || Operacion != 3)
-            {
-                switch (Operacion)
-                {
+        //    EmpleadoModel empleado = new EmpleadoModel();
+        //    if (Codigo != 0 || Operacion != 3)
+        //    {
+        //        switch (Operacion)
+        //        {
 
-                    case 1:
-                        empleado.Id = ObtenerUltimoIdEmpleado();
-                        empleado.Codigo = Convert.ToInt32(Nuevo.txtCodigo.Text);
-                        empleado.Descripcion = Nuevo.txtDescripcion.Text;
-                        empleado.Estado = false;
-                        ListaEmpleados.Add(empleado);
-                        MessageBox.Show("Empleado Agregado", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        Grilla.DataSource = ListaEmpleados.ToList();
-                        break;
-                    case 2:
-                        empleado = ObtenerEmpleado(Codigo);
-                        empleado.Codigo = Convert.ToInt32(Editar.txtCodigo.Text);
-                        empleado.Descripcion = Editar.txtDescripcion.Text;
-                        MessageBox.Show("Empleado Editado", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        Grilla.DataSource = ListaEmpleados.ToList();
-                        Editar.Close();
-                        break;
-                    case 3:
-                        empleado = ObtenerColor(Codigo);
-                        empleado.Estado = true;
-                        MessageBox.Show("Empleado Eliminado", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        Grilla.DataSource = ListaEmpleados.ToList();
-                        break;
-                }
-                Guardar();
-            }
-            else
-            {
-                MessageBox.Show("Debe seleccionar un empleado", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+        //            case 1:
+        //                empleado.Id = ObtenerUltimoIdEmpleado();
+        //                empleado.Codigo = Convert.ToInt32(Nuevo.txtCodigo.Text);
+        //                empleado.Descripcion = Nuevo.txtDescripcion.Text;
+        //                empleado.Estado = false;
+        //                ListaEmpleados.Add(empleado);
+        //                MessageBox.Show("Empleado Agregado", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        //                Grilla.DataSource = ListaEmpleados.ToList();
+        //                break;
+        //            case 2:
+        //                empleado = ObtenerEmpleado(Codigo);
+        //                empleado.Codigo = Convert.ToInt32(Editar.txtCodigo.Text);
+        //                empleado.Descripcion = Editar.txtDescripcion.Text;
+        //                MessageBox.Show("Empleado Editado", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        //                Grilla.DataSource = ListaEmpleados.ToList();
+        //                Editar.Close();
+        //                break;
+        //            case 3:
+        //                empleado = ObtenerColor(Codigo);
+        //                empleado.Estado = true;
+        //                MessageBox.Show("Empleado Eliminado", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        //                Grilla.DataSource = ListaEmpleados.ToList();
+        //                break;
+        //        }
+        //        Guardar();
+        //    }
+        //    else
+        //    {
+        //        MessageBox.Show("Debe seleccionar un empleado", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        //    }
         }
     }
 }

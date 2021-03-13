@@ -35,6 +35,7 @@
             this.ordenesDeProducciónToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.lineaDeTrabajoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuCerrarSesion = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuPerfil = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -44,6 +45,7 @@
             this.mnuColor,
             this.mnuModelo,
             this.mnuEmpleado,
+            this.mnuPerfil,
             this.ordenesDeProducciónToolStripMenuItem,
             this.lineaDeTrabajoToolStripMenuItem,
             this.mnuCerrarSesion});
@@ -93,6 +95,13 @@
             this.mnuCerrarSesion.Text = "Cerrar Sesion";
             this.mnuCerrarSesion.Click += new System.EventHandler(this.mnuCerrarSesion_Click);
             // 
+            // mnuPerfil
+            // 
+            this.mnuPerfil.Name = "mnuPerfil";
+            this.mnuPerfil.Size = new System.Drawing.Size(46, 20);
+            this.mnuPerfil.Text = "Perfil";
+            this.mnuPerfil.Click += new System.EventHandler(this.mnuPerfil_Click);
+            // 
             // Panel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -123,5 +132,6 @@
         private System.Windows.Forms.ToolStripMenuItem ordenesDeProducciónToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem lineaDeTrabajoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem mnuCerrarSesion;
+        private System.Windows.Forms.ToolStripMenuItem mnuPerfil;
     }
 }

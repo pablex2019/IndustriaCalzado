@@ -32,9 +32,9 @@
             this.btnEditar = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.btnNuevo = new System.Windows.Forms.Button();
-            this.dgvColores = new System.Windows.Forms.DataGridView();
+            this.dgvPerfiles = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvColores)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPerfiles)).BeginInit();
             this.SuspendLayout();
             // 
             // btnSalir
@@ -75,14 +75,15 @@
             this.btnNuevo.TabIndex = 8;
             this.btnNuevo.Text = "Nuevo";
             this.btnNuevo.UseVisualStyleBackColor = true;
+            this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
             // 
-            // dgvColores
+            // dgvPerfiles
             // 
-            this.dgvColores.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvColores.Location = new System.Drawing.Point(15, 25);
-            this.dgvColores.Name = "dgvColores";
-            this.dgvColores.Size = new System.Drawing.Size(321, 150);
-            this.dgvColores.TabIndex = 7;
+            this.dgvPerfiles.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvPerfiles.Location = new System.Drawing.Point(15, 25);
+            this.dgvPerfiles.Name = "dgvPerfiles";
+            this.dgvPerfiles.Size = new System.Drawing.Size(321, 150);
+            this.dgvPerfiles.TabIndex = 7;
             // 
             // label1
             // 
@@ -97,16 +98,23 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(350, 212);
+            this.ControlBox = false;
             this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.btnEditar);
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.btnNuevo);
-            this.Controls.Add(this.dgvColores);
+            this.Controls.Add(this.dgvPerfiles);
             this.Controls.Add(this.label1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "Indice";
-            this.Text = "Indice";
-            ((System.ComponentModel.ISupportInitialize)(this.dgvColores)).EndInit();
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Perfil - Indice";
+            this.Load += new System.EventHandler(this.Indice_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPerfiles)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -118,7 +126,7 @@
         private System.Windows.Forms.Button btnEditar;
         private System.Windows.Forms.Button btnEliminar;
         private System.Windows.Forms.Button btnNuevo;
-        private System.Windows.Forms.DataGridView dgvColores;
+        private System.Windows.Forms.DataGridView dgvPerfiles;
         private System.Windows.Forms.Label label1;
     }
 }
