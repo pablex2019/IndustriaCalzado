@@ -50,10 +50,10 @@ namespace IndustriaCalzado.Controlador
             Leer();
             return ListaPerfiles.Where(x => x.Estado != true).ToList();
         }
-        public PerfilModel ObtenerPerfil(string Descrípcion)
+        public PerfilModel ObtenerPerfil(string Descripcion)
         {
             Leer();
-            return ListaPerfiles.FirstOrDefault(x => x.Descripcion == Descrípcion);
+            return ListaPerfiles.FirstOrDefault(x => x.Descripcion == Descripcion);
         }
         public void Existe(Vista.Perfil.Nuevo Nuevo, DataGridView Grilla)
         {

@@ -32,10 +32,11 @@
             this.mnuColor = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuModelo = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuEmpleado = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuPerfil = new System.Windows.Forms.ToolStripMenuItem();
             this.ordenesDeProducciónToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.lineaDeTrabajoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuCerrarSesion = new System.Windows.Forms.ToolStripMenuItem();
-            this.mnuPerfil = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuTurno = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -44,8 +45,9 @@
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.mnuColor,
             this.mnuModelo,
-            this.mnuEmpleado,
+            this.mnuTurno,
             this.mnuPerfil,
+            this.mnuEmpleado,
             this.ordenesDeProducciónToolStripMenuItem,
             this.lineaDeTrabajoToolStripMenuItem,
             this.mnuCerrarSesion});
@@ -76,6 +78,13 @@
             this.mnuEmpleado.Text = "Empleado";
             this.mnuEmpleado.Click += new System.EventHandler(this.mnuEmpleado_Click);
             // 
+            // mnuPerfil
+            // 
+            this.mnuPerfil.Name = "mnuPerfil";
+            this.mnuPerfil.Size = new System.Drawing.Size(46, 20);
+            this.mnuPerfil.Text = "Perfil";
+            this.mnuPerfil.Click += new System.EventHandler(this.mnuPerfil_Click);
+            // 
             // ordenesDeProducciónToolStripMenuItem
             // 
             this.ordenesDeProducciónToolStripMenuItem.Name = "ordenesDeProducciónToolStripMenuItem";
@@ -95,12 +104,12 @@
             this.mnuCerrarSesion.Text = "Cerrar Sesion";
             this.mnuCerrarSesion.Click += new System.EventHandler(this.mnuCerrarSesion_Click);
             // 
-            // mnuPerfil
+            // mnuTurno
             // 
-            this.mnuPerfil.Name = "mnuPerfil";
-            this.mnuPerfil.Size = new System.Drawing.Size(46, 20);
-            this.mnuPerfil.Text = "Perfil";
-            this.mnuPerfil.Click += new System.EventHandler(this.mnuPerfil_Click);
+            this.mnuTurno.Name = "mnuTurno";
+            this.mnuTurno.Size = new System.Drawing.Size(50, 20);
+            this.mnuTurno.Text = "Turno";
+            this.mnuTurno.Click += new System.EventHandler(this.mnuTurno_Click);
             // 
             // Panel
             // 
@@ -133,5 +142,6 @@
         private System.Windows.Forms.ToolStripMenuItem lineaDeTrabajoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem mnuCerrarSesion;
         private System.Windows.Forms.ToolStripMenuItem mnuPerfil;
+        private System.Windows.Forms.ToolStripMenuItem mnuTurno;
     }
 }

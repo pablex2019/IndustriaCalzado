@@ -42,3 +42,4 @@ C:\Users\proda\Desktop\Archivos\Facultad\IndustriaCalzado\IndustriaCalzado\obj\D
 C:\Users\proda\Desktop\Archivos\Facultad\IndustriaCalzado\IndustriaCalzado\obj\Debug\IndustriaCalzado.Vista.Perfil.Indice.resources
 C:\Users\proda\Desktop\Archivos\Facultad\IndustriaCalzado\IndustriaCalzado\obj\Debug\IndustriaCalzado.Vista.Perfil.Editar.resources
 C:\Users\proda\Desktop\Archivos\Facultad\IndustriaCalzado\IndustriaCalzado\obj\Debug\IndustriaCalzado.Vista.Perfil.Nuevo.resources
+C:\Users\proda\Desktop\Archivos\Facultad\IndustriaCalzado\IndustriaCalzado\obj\Debug\IndustriaCalzado.Vista.Turno.Indice.resources

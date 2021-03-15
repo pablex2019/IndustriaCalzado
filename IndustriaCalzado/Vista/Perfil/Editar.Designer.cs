@@ -86,6 +86,7 @@
             this.Name = "Editar";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Perfil - Editar";
+            this.Load += new System.EventHandler(this.Editar_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

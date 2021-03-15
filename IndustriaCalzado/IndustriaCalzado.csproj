@@ -166,6 +166,12 @@
     <Compile Include="Vista\Perfil\Nuevo.Designer.cs">
       <DependentUpon>Nuevo.cs</DependentUpon>
     </Compile>
+    <Compile Include="Vista\Turno\Indice.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\Turno\Indice.Designer.cs">
+      <DependentUpon>Indice.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Vista\Color\Editar.resx">
       <DependentUpon>Editar.cs</DependentUpon>
     </EmbeddedResource>
@@ -220,6 +226,9 @@
     <EmbeddedResource Include="Vista\Perfil\Nuevo.resx">
       <DependentUpon>Nuevo.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Turno\Indice.resx">
+      <DependentUpon>Indice.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -236,7 +245,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Vista\OrdenDeProduccion\" />
-    <Folder Include="Vista\Turno\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -56,6 +56,7 @@
             this.btnEditar.TabIndex = 10;
             this.btnEditar.Text = "Editar";
             this.btnEditar.UseVisualStyleBackColor = true;
+            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
             // 
             // btnEliminar
             // 
@@ -84,6 +85,7 @@
             this.dgvPerfiles.Name = "dgvPerfiles";
             this.dgvPerfiles.Size = new System.Drawing.Size(321, 150);
             this.dgvPerfiles.TabIndex = 7;
+            this.dgvPerfiles.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPerfiles_CellClick);
             // 
             // label1
             // 

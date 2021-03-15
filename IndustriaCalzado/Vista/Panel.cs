@@ -46,5 +46,10 @@ namespace IndustriaCalzado.Vista
         {
             new Perfil.Indice().Show();
         }
+
+        private void mnuTurno_Click(object sender, EventArgs e)
+        {
+            new Turno.Indice().Show();
+        }
     }
 }
