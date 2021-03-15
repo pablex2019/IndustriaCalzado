@@ -53,6 +53,7 @@
     <Compile Include="Controlador\EmpleadoController.cs" />
     <Compile Include="Controlador\ModeloController.cs" />
     <Compile Include="Controlador\PerfilController.cs" />
+    <Compile Include="Controlador\TurnoController.cs" />
     <Compile Include="Controlador\UsuarioController.cs" />
     <Compile Include="Modelo\ColorModel.cs" />
     <Compile Include="Modelo\EmpleadoModel.cs" />
@@ -166,11 +167,23 @@
     <Compile Include="Vista\Perfil\Nuevo.Designer.cs">
       <DependentUpon>Nuevo.cs</DependentUpon>
     </Compile>
+    <Compile Include="Vista\Turno\Editar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\Turno\Editar.Designer.cs">
+      <DependentUpon>Editar.cs</DependentUpon>
+    </Compile>
     <Compile Include="Vista\Turno\Indice.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Vista\Turno\Indice.Designer.cs">
       <DependentUpon>Indice.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\Turno\Nuevo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vista\Turno\Nuevo.Designer.cs">
+      <DependentUpon>Nuevo.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Vista\Color\Editar.resx">
       <DependentUpon>Editar.cs</DependentUpon>
@@ -226,8 +239,14 @@
     <EmbeddedResource Include="Vista\Perfil\Nuevo.resx">
       <DependentUpon>Nuevo.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Turno\Editar.resx">
+      <DependentUpon>Editar.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Vista\Turno\Indice.resx">
       <DependentUpon>Indice.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\Turno\Nuevo.resx">
+      <DependentUpon>Nuevo.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

@@ -53,6 +53,7 @@ namespace IndustriaCalzado.Vista.Perfil
         private void btnEliminar_Click(object sender, EventArgs e)
         {
             PerfilController.ABM(3, null, null, Descripcion, Grilla = dgvPerfiles);
+            dgvPerfiles.DataSource = PerfilController.Listado();
         }
         private void btnSalir_Click(object sender, EventArgs e)
         {

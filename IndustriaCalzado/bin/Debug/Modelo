@@ -1,1 +1,1 @@
-[{"Id":1,"Sku":"1","Denominación":"NIKE 2020","Objetivo":100,"Estado":false},{"Id":2,"Sku":"2","Denominación":"ADIDAS 2020","Objetivo":100,"Estado":false}]
+[{"Id":1,"Sku":"1","Denominación":"NIKE 2020","Objetivo":100,"Estado":false},{"Id":2,"Sku":"2","Denominación":"ADIDAS 2020","Objetivo":100,"Estado":true}]

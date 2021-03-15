@@ -104,7 +104,6 @@ namespace IndustriaCalzado.Controlador
                         perfil = ObtenerPerfil(Descripcion);
                         perfil.Estado = true;
                         MessageBox.Show("Perfil Eliminado", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        Grilla.DataSource = ListaPerfiles.ToList();
                         break;
                 }
                 Guardar();

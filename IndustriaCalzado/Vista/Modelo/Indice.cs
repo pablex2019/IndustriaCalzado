@@ -56,6 +56,7 @@ namespace IndustriaCalzado.Vista.Modelo
         private void btnEliminar_Click(object sender, EventArgs e)
         {
             ModeloController.ABM(3, null, null, Sku, Grilla = dgvModelos);
+            dgvModelos.DataSource = ModeloController.Listado();
         }
 
         private void btnSalir_Click(object sender, EventArgs e)

@@ -105,7 +105,6 @@ namespace IndustriaCalzado.Controlador
                         color = ObtenerColor(Codigo);
                         color.Estado = true;
                         MessageBox.Show("Color Eliminado", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        Grilla.DataSource = ListaColores.ToList();
                         break;
                 }
                 Guardar();

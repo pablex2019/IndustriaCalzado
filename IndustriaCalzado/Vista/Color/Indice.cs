@@ -48,10 +48,10 @@ namespace IndustriaCalzado.Vista.Color
         {
             if(Codigo!=0)
             {
-                Color.Editar Editar = new Color.Editar();
-                Editar.Codigo = Codigo;
-                Editar.Grilla = dgvColores;
-                Editar.Show();
+                Color.Editar editar = new Color.Editar();
+                editar.Codigo = Codigo;
+                editar.Grilla = dgvColores;
+                editar.Show();
             }
             else
             {
@@ -61,6 +61,7 @@ namespace IndustriaCalzado.Vista.Color
         private void btnEliminar_Click(object sender, EventArgs e)
         {
             ColorController.ABM(3, null, null,Codigo, Grilla = dgvColores);
+            dgvColores.DataSource = ColorController.Listado();
         }
         private void btnSalir_Click(object sender, EventArgs e)
         {

@@ -12,6 +12,6 @@ namespace IndustriaCalzado.Modelo
         public string Descripcion { get; set; }
         public string HoraDesde { get; set; }
         public string HoraHasta { get; set; }
-        public string Estado { get; set; }
+        public bool Estado { get; set; }
     }
 }
