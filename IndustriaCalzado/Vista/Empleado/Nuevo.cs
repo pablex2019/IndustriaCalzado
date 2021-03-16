@@ -14,12 +14,26 @@ namespace IndustriaCalzado.Vista.Empleado
     public partial class Nuevo : Form
     {
         public DataGridView Grilla;
+        private List<string> Sexos = new List<string>();
         private EmpleadoController EmpleadoController;
+        private PerfilController PerfilController;
+        private TurnoController TurnoController;
 
         public Nuevo()
         {
             InitializeComponent();
             EmpleadoController = new EmpleadoController("Empledo");
+            PerfilController = new PerfilController("Perfil");
+            TurnoController = new TurnoController("Turno");
+        }
+        private void Nuevo_Load(object sender, EventArgs e)
+        {
+            Sexos.Add("Masculino");
+            Sexos.Add("Femenino");
+            Sexos.Add("Indefinido");
+            cboSexo.DataSource = Sexos.ToList();
+            cboPerfil.DataSource = PerfilController.Listado().Select(x => x.Descripcion).ToList();
+            cboTurno.DataSource = TurnoController.Listado().Select(x=>x.Descripcion).ToList();
         }
         private void btnGuardar_Click(object sender, EventArgs e)
         {
@@ -29,5 +43,7 @@ namespace IndustriaCalzado.Vista.Empleado
         {
             this.Close();
         }
+
+        
     }
 }

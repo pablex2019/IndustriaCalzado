@@ -50,6 +50,7 @@ namespace IndustriaCalzado.Vista.Empleado
         private void btnEliminar_Click(object sender, EventArgs e)
         {
             EmpleadoController.ABM(3, null, null, Documento, Grilla = dgvEmpleado);
+            dgvEmpleado.DataSource = EmpleadoController.Listado();
         }
         private void btnSalir_Click(object sender, EventArgs e)
         {

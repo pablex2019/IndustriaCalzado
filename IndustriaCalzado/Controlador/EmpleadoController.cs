@@ -16,11 +16,17 @@ namespace IndustriaCalzado.Controlador
         private Global AccesoADatos { get; set; }
         private List<EmpleadoModel> ListaEmpleados { get; set; }
         private string DatosEmpleados;
+        private PerfilController PerfilController;
+        private TurnoController TurnoController;
+        private UsuarioController UsuarioController;
 
         public EmpleadoController(string _Archivo)
         {
             this.Archivo = _Archivo;
             this.AccesoADatos = new Global(this.Archivo);
+            PerfilController = new PerfilController("Perfil");
+            TurnoController = new TurnoController("Turno");
+            UsuarioController = new UsuarioController("Usuario");
         }
         private void Leer()
         {
@@ -66,7 +72,7 @@ namespace IndustriaCalzado.Controlador
                 }
                 else
                 {
-                    MessageBox.Show("Ya existe el color", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Ya existe el empleado", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         }
@@ -76,44 +82,51 @@ namespace IndustriaCalzado.Controlador
         /// </summary>
         /// <param name="Operacion"></param>
         /// <param name="Nuevo"></param>
-        public void ABM(int Operacion, Vista.Empleado.Nuevo Nuevo, Vista.Color.Editar Editar, int Codigo, DataGridView Grilla)
+        public void ABM(int Operacion, Vista.Empleado.Nuevo Nuevo, Vista.Color.Editar Editar, int Documento, DataGridView Grilla)
         {
-        //    EmpleadoModel empleado = new EmpleadoModel();
-        //    if (Codigo != 0 || Operacion != 3)
-        //    {
-        //        switch (Operacion)
-        //        {
-
-        //            case 1:
-        //                empleado.Id = ObtenerUltimoIdEmpleado();
-        //                empleado.Codigo = Convert.ToInt32(Nuevo.txtCodigo.Text);
-        //                empleado.Descripcion = Nuevo.txtDescripcion.Text;
-        //                empleado.Estado = false;
-        //                ListaEmpleados.Add(empleado);
-        //                MessageBox.Show("Empleado Agregado", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
-        //                Grilla.DataSource = ListaEmpleados.ToList();
-        //                break;
-        //            case 2:
-        //                empleado = ObtenerEmpleado(Codigo);
-        //                empleado.Codigo = Convert.ToInt32(Editar.txtCodigo.Text);
-        //                empleado.Descripcion = Editar.txtDescripcion.Text;
-        //                MessageBox.Show("Empleado Editado", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
-        //                Grilla.DataSource = ListaEmpleados.ToList();
-        //                Editar.Close();
-        //                break;
-        //            case 3:
-        //                empleado = ObtenerColor(Codigo);
-        //                empleado.Estado = true;
-        //                MessageBox.Show("Empleado Eliminado", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
-        //                Grilla.DataSource = ListaEmpleados.ToList();
-        //                break;
-        //        }
-        //        Guardar();
-        //    }
-        //    else
-        //    {
-        //        MessageBox.Show("Debe seleccionar un empleado", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
-        //    }
-        }
+            EmpleadoModel empleado = new EmpleadoModel();
+            if (Documento != 0 || Operacion != 3)
+            {
+                switch (Operacion)
+                {
+                    case 1:
+                        empleado.Id = ObtenerUltimoIdEmpleado();
+                        empleado.Documento = Convert.ToInt32(Nuevo.txtDocumento.Text);
+                        empleado.Nombres = Nuevo.txtNombre.Text;
+                        empleado.Apellidos = Nuevo.txtApellido.Text;
+                        empleado.CorreoElectronico = Nuevo.txtCorreoElectronico.Text;
+                        empleado.Sexo = Nuevo.cboSexo.Text;
+                        empleado.PerfilModel = PerfilController.ObtenerPerfil(Nuevo.cboPerfil.Text);
+                        empleado.TurnoModel = TurnoController.ObtenerTurno(Nuevo.cboTurno.Text);
+                        empleado.UsuarioModel.Id = UsuarioController.ObtenerUltimoIdUsuario();
+                        empleado.UsuarioModel.Nombre = Nuevo.txtUsuario.Text;
+                        empleado.UsuarioModel.Clave = Nuevo.txtClave.Text;
+                        empleado.Estado = false;
+                        ListaEmpleados.Add(empleado);
+                        MessageBox.Show("Empleado Agregado", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        Grilla.DataSource = ListaEmpleados.ToList();
+                        break;
+                        //            case 2:
+                        //                empleado = ObtenerEmpleado(Codigo);
+                        //                empleado.Codigo = Convert.ToInt32(Editar.txtCodigo.Text);
+                        //                empleado.Descripcion = Editar.txtDescripcion.Text;
+                        //                MessageBox.Show("Empleado Editado", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        //                Grilla.DataSource = ListaEmpleados.ToList();
+                        //                Editar.Close();
+                        //                break;
+                        //            case 3:
+                        //                empleado = ObtenerColor(Codigo);
+                        //                empleado.Estado = true;
+                        //                MessageBox.Show("Empleado Eliminado", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        //                Grilla.DataSource = ListaEmpleados.ToList();
+                        //                break;
+                        //        }
+                        //        Guardar();
+                        //    }
+                        //    else
+                        //    {
+                        //        MessageBox.Show("Debe seleccionar un empleado", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        //    }
+                }
     }
 }

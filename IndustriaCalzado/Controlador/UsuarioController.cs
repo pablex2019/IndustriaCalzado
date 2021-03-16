@@ -33,6 +33,18 @@ namespace IndustriaCalzado.Controlador
             this.DatosUsuarios = JsonConvert.SerializeObject(this.ListaUsuarios);
             this.AccesoADatos.Guardar(this.DatosUsuarios);
         }
+        public int ObtenerUltimoIdUsuario()
+        {
+            Leer();
+            if (ListaUsuarios.Count == 0)
+            {
+                return 1;
+            }
+            else
+            {
+                return ListaUsuarios.Max(x => x.Id) + 1;
+            }
+        }
         public void ValidarExistencia(string Nombre,string Clave,IniciarSesion IniciarSesion)
         {
             Leer();

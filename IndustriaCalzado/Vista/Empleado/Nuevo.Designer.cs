@@ -109,6 +109,7 @@
             // 
             // cboSexo
             // 
+            this.cboSexo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboSexo.FormattingEnabled = true;
             this.cboSexo.Location = new System.Drawing.Point(16, 189);
             this.cboSexo.Name = "cboSexo";
@@ -142,6 +143,7 @@
             // 
             // cboPerfil
             // 
+            this.cboPerfil.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboPerfil.FormattingEnabled = true;
             this.cboPerfil.Location = new System.Drawing.Point(16, 229);
             this.cboPerfil.Name = "cboPerfil";
@@ -159,6 +161,7 @@
             // 
             // cboTurno
             // 
+            this.cboTurno.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboTurno.FormattingEnabled = true;
             this.cboTurno.Location = new System.Drawing.Point(16, 269);
             this.cboTurno.Name = "cboTurno";
@@ -251,6 +254,7 @@
             this.Name = "Nuevo";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Empleado - Nuevo";
+            this.Load += new System.EventHandler(this.Nuevo_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
