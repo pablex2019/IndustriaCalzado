@@ -16,12 +16,14 @@ namespace IndustriaCalzado
     {
         private UsuarioController UsuarioController;
         private ColorController ColorController;
+        private ModeloController ModeloController;
 
         public IniciarSesion()
         {
             InitializeComponent();
-            UsuarioController = new UsuarioController("Usuario");
-            ColorController = new ColorController("Color");
+            UsuarioController = new UsuarioController("Usuarios");
+            ColorController = new ColorController("Colores");
+            ModeloController = new ModeloController("Modelos");
         }
 
         private void btnEntrar_Click(object sender, EventArgs e)
@@ -31,8 +33,9 @@ namespace IndustriaCalzado
 
         private void btnSalir_Click(object sender, EventArgs e)
         {
-            UsuarioController.Salir("Usuario", null);
-            ColorController.Salir("Color");
+            UsuarioController.Salir("Usuarios", null);
+            ColorController.Salir("Colores");
+            ModeloController.Salir("Modelos");
         }
     }
 }

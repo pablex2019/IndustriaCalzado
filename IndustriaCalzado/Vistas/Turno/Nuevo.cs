@@ -1,4 +1,5 @@
 ﻿using IndustriaCalzado.Controlador;
+using IndustriaCalzado.Controladores;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -15,13 +16,18 @@ namespace IndustriaCalzado.Vista.Turno
     {
         public DataGridView Grilla;
         private TurnoController TurnoController;
+        private HorarioController HorarioController;
 
         public Nuevo()
         {
             InitializeComponent();
-            TurnoController = new TurnoController("Turno");
+            TurnoController = new TurnoController("Turnos");
+            HorarioController = new HorarioController("Horarios");
         }
-
+        private void Nuevo_Load(object sender, EventArgs e)
+        {
+            dgvHorarios.DataSource = HorarioController.Listado();
+        }
         private void btnGuardar_Click(object sender, EventArgs e)
         {
             TurnoController.Existe(this, Grilla);
@@ -34,7 +40,9 @@ namespace IndustriaCalzado.Vista.Turno
 
         private void btnNuevo_Click(object sender, EventArgs e)
         {
-
+            Vistas.Horario.Nuevo nuevo = new Vistas.Horario.Nuevo();
+            nuevo.Grilla = dgvHorarios;
+            nuevo.Show();
         }
 
         private void btnEditar_Click(object sender, EventArgs e)
@@ -46,5 +54,7 @@ namespace IndustriaCalzado.Vista.Turno
         {
 
         }
+
+        
     }
 }

@@ -33,7 +33,7 @@ namespace IndustriaCalzado.Controladores
             this.DatosHorarios = JsonConvert.SerializeObject(this.ListaHorarios);
             this.AccesoADatos.Guardar(this.DatosHorarios);
         }
-        public int ObtenerUltimoIdTurno()
+        public int ObtenerUltimoIdHorario()
         {
             Leer();
             if (ListaHorarios.Count == 0)
@@ -45,25 +45,70 @@ namespace IndustriaCalzado.Controladores
                 return ListaHorarios.Max(x => x.Id) + 1;
             }
         }
-        public HorarioModel ObtenerHorario(int Id)
+        public List<HorarioModel> Listado()
         {
             Leer();
-            return ListaHorarios.FirstOrDefault(x => x.Id == Id);
+            return ListaHorarios.Where(x => x.Estado != true).ToList();
+        }
+        public HorarioModel ObtenerHorario(int Codigo)
+        {
+            Leer();
+            return ListaHorarios.FirstOrDefault(x => x.Codigo == Codigo && x.Estado == false);
         }
         public void Existe(Vistas.Horario.Nuevo Nuevo, DataGridView Grilla)
         {
             Leer();
             if (ListaHorarios.Count >= 0)
             {
-                //if (ListaHorarios.Any(x => x.HoraDesde == Convert.ToInt32(Nuevo.Text) || x.Descripcion == Nuevo.txtDescripcion.Text) == false)
-                //{
-                //    ABM(1, Nuevo, null, 0, Grilla);
-                //}
-                //else
-                //{
-                //    MessageBox.Show("Ya se encuentra registrado el horario, ya sea con la misma descripción o el mismo codigo", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                //}
+                if (ListaHorarios.Any(x => (x.HoraDesde == Nuevo.txtHoraDesde.Text || x.HoraHasta == Nuevo.txtHoraHasta.Text) && x.Estado != true) == false)
+                {
+                    ABM(1, Nuevo, null, 0, Grilla);
+                }
+                else
+                {
+                    MessageBox.Show("Ya se encuentra registrado el horario, con el mismo rango de horario", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
+        }
+        public void ABM(int Operacion, Vistas.Horario.Nuevo Nuevo, Vistas.Horario.Editar Editar, int Codigo, DataGridView Grilla)
+        {
+            HorarioModel horario = new HorarioModel();
+            if (Codigo != 0 || Operacion != 3)
+            {
+                switch (Operacion)
+                {
+                    case 1:
+                        horario.Id = ObtenerUltimoIdHorario();
+                        horario.Codigo = Convert.ToInt32(Nuevo.txtCodigo.Text);
+                        horario.HoraDesde = Nuevo.txtHoraDesde.Text;
+                        horario.HoraHasta = Nuevo.txtHoraHasta.Text;
+                        horario.Estado = false;
+                        ListaHorarios.Add(horario);
+                        MessageBox.Show("Horario Agregado", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        break;
+                    case 2:
+                        //horario = ObtenerHorario(Codigo);
+                        
+                        //MessageBox.Show("Modelo Editado", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        //Editar.Close();
+                        break;
+                    case 3:
+                        //modelo = ObtenerModelo(Sku);
+                        //modelo.Estado = true;
+                        //MessageBox.Show("Modelo Eliminado", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        break;
+                }
+                Guardar();
+                Grilla.DataSource = Listado();
+            }
+            else
+            {
+                MessageBox.Show("Debe seleccionar un modelo", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+        public void Salir(string valor)
+        {
+            AccesoADatos.Finalizar(valor);
         }
     }
 }

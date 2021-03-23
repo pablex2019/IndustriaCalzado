@@ -20,7 +20,7 @@ namespace IndustriaCalzado.Vista.Turno
         public Indice()
         {
             InitializeComponent();
-            TurnoController = new TurnoController("Turno");
+            TurnoController = new TurnoController("Turnos");
         }
         private void Indice_Load(object sender, EventArgs e)
         {

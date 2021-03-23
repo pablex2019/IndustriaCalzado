@@ -20,7 +20,7 @@ namespace IndustriaCalzado.Vista.Turno
         public Editar()
         {
             InitializeComponent();
-            TurnoController = new TurnoController("Turno");
+            TurnoController = new TurnoController("Turnos");
         }
 
         private void Editar_Load(object sender, EventArgs e)
@@ -37,6 +37,11 @@ namespace IndustriaCalzado.Vista.Turno
         private void btnGuardar_Click(object sender, EventArgs e)
         {
             TurnoController.ABM(2, null, this, Descripcion, Grilla);
+        }
+
+        private void btnNuevo_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

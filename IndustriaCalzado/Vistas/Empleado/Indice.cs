@@ -20,7 +20,7 @@ namespace IndustriaCalzado.Vista.Empleado
         public Indice()
         {
             InitializeComponent();
-            EmpleadoController = new EmpleadoController("Empleado");
+            EmpleadoController = new EmpleadoController("Empleados");
         }
         private void dgvEmpleado_CellClick(object sender, DataGridViewCellEventArgs e)
         {

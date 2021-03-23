@@ -20,7 +20,7 @@ namespace IndustriaCalzado.Vista.Modelo
         public Indice()
         {
             InitializeComponent();
-            ModeloController = new ModeloController("Modelo");
+            ModeloController = new ModeloController("Modelos");
         }
         private void Indice_Load(object sender, EventArgs e)
         {

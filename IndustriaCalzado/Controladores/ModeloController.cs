@@ -53,14 +53,14 @@ namespace IndustriaCalzado.Controlador
         public ModeloModel ObtenerModelo(string Sku)
         {
             Leer();
-            return ListaModelos.FirstOrDefault(x => x.Sku == Sku);
+            return ListaModelos.FirstOrDefault(x => x.Sku == Sku && x.Estado == false);
         }
         public void Existe(Vista.Modelo.Nuevo Nuevo, DataGridView Grilla)
         {
             Leer();
             if (ListaModelos.Count >= 0)
             {
-                if (ListaModelos.Any(x => x.Sku == Nuevo.txtSku.Text || x.Denominación == Nuevo.txtDenominacion.Text) == false)
+                if (ListaModelos.Any(x => (x.Sku == Nuevo.txtSku.Text || x.Denominación == Nuevo.txtDenominacion.Text) && x.Estado != true) == false)
                 {
                     ABM(1, Nuevo, null, null, Grilla);
                 }

@@ -12,6 +12,7 @@ namespace IndustriaCalzado.Modelo
         public string Hora { get; set; }
         public int cantidad { get; set; }
         public HorarioModel TurnoModel { get; set; }
+        public EmpleadoModel EmpleadoModel { get; set; }
         PieModel PieModel { get; set; }
     }
 }

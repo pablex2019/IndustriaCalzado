@@ -15,12 +15,14 @@ namespace IndustriaCalzado.Vista
     {
         private UsuarioController UsuarioController;
         private ColorController ColorController;
+        private ModeloController ModeloController;
 
         public Panel()
         {
             InitializeComponent();
-            UsuarioController = new UsuarioController("Usuario");
-            ColorController = new ColorController("Color");
+            UsuarioController = new UsuarioController("Usuarios");
+            ColorController = new ColorController("Colores");
+            ModeloController = new ModeloController("Modelos");
         }
         private void mnuColor_Click(object sender, EventArgs e)
         {
@@ -28,8 +30,9 @@ namespace IndustriaCalzado.Vista
         }
         private void mnuCerrarSesion_Click(object sender, EventArgs e)
         {
-            UsuarioController.Salir("Usuario", this);
-            ColorController.Salir("Color");
+            UsuarioController.Salir("Usuarios", this);
+            ColorController.Salir("Colores");
+            ModeloController.Salir("Modelos");
         }
 
         private void mnuModelo_Click(object sender, EventArgs e)
@@ -50,6 +53,16 @@ namespace IndustriaCalzado.Vista
         private void mnuTurno_Click(object sender, EventArgs e)
         {
             new Turno.Indice().Show();
+        }
+
+        private void mnuLineasDeTrabajo_Click(object sender, EventArgs e)
+        {
+            new Vista.LineaDeTrabajo.Indice().Show();
+        }
+
+        private void mnuOrdenesDeProduccion_Click(object sender, EventArgs e)
+        {
+            new Vista.LineaDeTrabajo.Indice().Show();
         }
     }
 }

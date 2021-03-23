@@ -36,8 +36,8 @@
             this.btnEliminar = new System.Windows.Forms.Button();
             this.btnNuevo = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
-            this.dgvTurnos = new System.Windows.Forms.DataGridView();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvTurnos)).BeginInit();
+            this.dgvHorarios = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvHorarios)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -53,7 +53,7 @@
             // 
             this.txtDescripcion.Location = new System.Drawing.Point(16, 30);
             this.txtDescripcion.Name = "txtDescripcion";
-            this.txtDescripcion.Size = new System.Drawing.Size(185, 20);
+            this.txtDescripcion.Size = new System.Drawing.Size(371, 20);
             this.txtDescripcion.TabIndex = 1;
             // 
             // btnCancelar
@@ -116,26 +116,26 @@
             this.label2.TabIndex = 22;
             this.label2.Text = "Listado de Horarios";
             // 
-            // dgvTurnos
+            // dgvHorarios
             // 
-            this.dgvTurnos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvTurnos.Location = new System.Drawing.Point(13, 69);
-            this.dgvTurnos.Name = "dgvTurnos";
-            this.dgvTurnos.Size = new System.Drawing.Size(188, 150);
-            this.dgvTurnos.TabIndex = 21;
+            this.dgvHorarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvHorarios.Location = new System.Drawing.Point(13, 69);
+            this.dgvHorarios.Name = "dgvHorarios";
+            this.dgvHorarios.Size = new System.Drawing.Size(374, 150);
+            this.dgvHorarios.TabIndex = 21;
             // 
             // Nuevo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ClientSize = new System.Drawing.Size(218, 302);
+            this.ClientSize = new System.Drawing.Size(403, 302);
             this.ControlBox = false;
             this.Controls.Add(this.btnEditar);
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.btnNuevo);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.dgvTurnos);
+            this.Controls.Add(this.dgvHorarios);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnGuardar);
             this.Controls.Add(this.txtDescripcion);
@@ -146,7 +146,8 @@
             this.Name = "Nuevo";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Turno - Nuevo";
-            ((System.ComponentModel.ISupportInitialize)(this.dgvTurnos)).EndInit();
+            this.Load += new System.EventHandler(this.Nuevo_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvHorarios)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -162,6 +163,6 @@
         private System.Windows.Forms.Button btnEliminar;
         private System.Windows.Forms.Button btnNuevo;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.DataGridView dgvTurnos;
+        private System.Windows.Forms.DataGridView dgvHorarios;
     }
 }

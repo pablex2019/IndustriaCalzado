@@ -65,7 +65,7 @@
             // 
             this.txtDescripcion.Location = new System.Drawing.Point(16, 30);
             this.txtDescripcion.Name = "txtDescripcion";
-            this.txtDescripcion.Size = new System.Drawing.Size(188, 20);
+            this.txtDescripcion.Size = new System.Drawing.Size(371, 20);
             this.txtDescripcion.TabIndex = 9;
             // 
             // label1
@@ -82,7 +82,7 @@
             this.dgvTurnos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvTurnos.Location = new System.Drawing.Point(13, 69);
             this.dgvTurnos.Name = "dgvTurnos";
-            this.dgvTurnos.Size = new System.Drawing.Size(188, 150);
+            this.dgvTurnos.Size = new System.Drawing.Size(374, 150);
             this.dgvTurnos.TabIndex = 16;
             // 
             // label2
@@ -120,13 +120,14 @@
             this.btnNuevo.TabIndex = 18;
             this.btnNuevo.Text = "Nuevo";
             this.btnNuevo.UseVisualStyleBackColor = true;
+            this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
             // 
             // Editar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ClientSize = new System.Drawing.Size(219, 304);
+            this.ClientSize = new System.Drawing.Size(403, 304);
             this.ControlBox = false;
             this.Controls.Add(this.btnEditar);
             this.Controls.Add(this.btnEliminar);

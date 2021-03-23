@@ -53,14 +53,14 @@ namespace IndustriaCalzado.Controlador
         public PerfilModel ObtenerPerfil(string Descripcion)
         {
             Leer();
-            return ListaPerfiles.FirstOrDefault(x => x.Descripcion == Descripcion);
+            return ListaPerfiles.FirstOrDefault(x => x.Descripcion == Descripcion && x.Estado == false);
         }
         public void Existe(Vista.Perfil.Nuevo Nuevo, DataGridView Grilla)
         {
             Leer();
             if (ListaPerfiles.Count >= 0)
             {
-                if (ListaPerfiles.Any(x => x.Descripcion == Nuevo.txtDescripcion.Text)==false)
+                if (ListaPerfiles.Any(x => (x.Descripcion == Nuevo.txtDescripcion.Text) && x.Estado != true) == false)
                 {
                     ABM(1, Nuevo, null, string.Empty, Grilla);
                 }

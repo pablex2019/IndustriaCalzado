@@ -24,9 +24,9 @@ namespace IndustriaCalzado.Controlador
         {
             this.Archivo = _Archivo;
             this.AccesoADatos = new Global(this.Archivo);
-            PerfilController = new PerfilController("Perfil");
-            TurnoController = new TurnoController("Turno");
-            UsuarioController = new UsuarioController("Usuario");
+            PerfilController = new PerfilController("Perfiles");
+            TurnoController = new TurnoController("Turnos");
+            UsuarioController = new UsuarioController("Usuarios");
         }
         private void Leer()
         {

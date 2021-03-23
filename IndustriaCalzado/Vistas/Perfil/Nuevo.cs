@@ -19,7 +19,7 @@ namespace IndustriaCalzado.Vista.Perfil
         public Nuevo()
         {
             InitializeComponent();
-            PerfilController = new PerfilController("Perfil");
+            PerfilController = new PerfilController("Perfiles");
         }
 
         private void btnGuardar_Click(object sender, EventArgs e)

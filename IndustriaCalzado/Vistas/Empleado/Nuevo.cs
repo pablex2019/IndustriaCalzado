@@ -22,9 +22,9 @@ namespace IndustriaCalzado.Vista.Empleado
         public Nuevo()
         {
             InitializeComponent();
-            EmpleadoController = new EmpleadoController("Empleado");
-            PerfilController = new PerfilController("Perfil");
-            TurnoController = new TurnoController("Turno");
+            EmpleadoController = new EmpleadoController("Empleados");
+            PerfilController = new PerfilController("Perfiles");
+            TurnoController = new TurnoController("Turnos");
         }
         private void Nuevo_Load(object sender, EventArgs e)
         {

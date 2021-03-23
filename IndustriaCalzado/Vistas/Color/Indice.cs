@@ -20,7 +20,7 @@ namespace IndustriaCalzado.Vista.Color
         public Indice()
         {
             InitializeComponent();
-            ColorController = new ColorController("Color");
+            ColorController = new ColorController("Colores");
         }
         private void Index_Load(object sender, EventArgs e)
         {

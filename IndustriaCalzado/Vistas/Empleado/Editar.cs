@@ -20,7 +20,7 @@ namespace IndustriaCalzado.Vista.Empleado
         public Editar()
         {
             InitializeComponent();
-            EmpleadoController = new EmpleadoController("Empleado");
+            EmpleadoController = new EmpleadoController("Empleados");
         }
         private void Editar_Load(object sender, EventArgs e)
         {

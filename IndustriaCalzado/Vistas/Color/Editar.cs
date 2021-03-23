@@ -20,7 +20,7 @@ namespace IndustriaCalzado.Vista.Color
         public Editar()
         {
             InitializeComponent();
-            ColorController = new ColorController("Color");
+            ColorController = new ColorController("Colores");
         }
 
         private void Editar_Load(object sender, EventArgs e)

@@ -19,7 +19,7 @@ namespace IndustriaCalzado.Vista.Color
         public Nuevo()
         {
             InitializeComponent();
-            ColorController = new ColorController("Color");
+            ColorController = new ColorController("Colores");
         }
 
         private void btnGuardar_Click(object sender, EventArgs e)

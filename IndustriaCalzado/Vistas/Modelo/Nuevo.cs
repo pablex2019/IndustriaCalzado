@@ -19,7 +19,7 @@ namespace IndustriaCalzado.Vista.Modelo
         public Nuevo()
         {
             InitializeComponent();
-            ModeloController = new ModeloController("Modelo");
+            ModeloController = new ModeloController("Modelos");
         }
         private void btnGuardar_Click(object sender, EventArgs e)
         {

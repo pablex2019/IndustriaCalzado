@@ -20,7 +20,7 @@ namespace IndustriaCalzado.Vista.Perfil
         public Indice()
         {
             InitializeComponent();
-            PerfilController = new PerfilController("Perfil");
+            PerfilController = new PerfilController("Perfiles");
         }
         private void Indice_Load(object sender, EventArgs e)
         {

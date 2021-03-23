@@ -53,16 +53,16 @@ namespace IndustriaCalzado.Controlador
         public ColorModel ObtenerColor(int Codigo)
         {
             Leer();
-            return ListaColores.FirstOrDefault(x => x.Codigo == Codigo);
+            return ListaColores.FirstOrDefault(x => x.Codigo == Codigo && x.Estado == false);
         }
         public void Existe(Vista.Color.Nuevo Nuevo,DataGridView Grilla)
         {
             Leer();
             if (ListaColores.Count >= 0)
             {
-                if (ListaColores.Any(x => x.Codigo == Convert.ToInt32(Nuevo.txtCodigo.Text) || x.Descripcion == Nuevo.txtDescripcion.Text) == false)
+                if (ListaColores.Any(x => (x.Codigo == Convert.ToInt32(Nuevo.txtCodigo.Text) || x.Descripcion == Nuevo.txtDescripcion.Text) && x.Estado != true) == false)
                 {
-                    ABM(1,Nuevo,null,0,Grilla);
+                    ABM(1, Nuevo, null, 0, Grilla);
                 }
                 else
                 {

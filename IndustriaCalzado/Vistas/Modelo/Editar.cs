@@ -20,7 +20,7 @@ namespace IndustriaCalzado.Vista.Modelo
         public Editar()
         {
             InitializeComponent();
-            ModeloController = new ModeloController("Modelo");
+            ModeloController = new ModeloController("Modelos");
         }
 
         private void Editar_Load(object sender, EventArgs e)

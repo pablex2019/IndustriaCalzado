@@ -20,7 +20,7 @@ namespace IndustriaCalzado.Vista.Perfil
         public Editar()
         {
             InitializeComponent();
-            PerfilController = new PerfilController("Perfil");
+            PerfilController = new PerfilController("Perfiles");
         }
         private void Editar_Load(object sender, EventArgs e)
         {
