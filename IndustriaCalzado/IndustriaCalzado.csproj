@@ -49,161 +49,186 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Configuracion\Global.cs" />
-    <Compile Include="Controlador\ColorController.cs" />
-    <Compile Include="Controlador\EmpleadoController.cs" />
-    <Compile Include="Controlador\ModeloController.cs" />
-    <Compile Include="Controlador\PerfilController.cs" />
-    <Compile Include="Controlador\TurnoController.cs" />
-    <Compile Include="Controlador\UsuarioController.cs" />
+    <Compile Include="Controladores\ColorController.cs" />
+    <Compile Include="Controladores\EmpleadoController.cs" />
+    <Compile Include="Controladores\HorarioController.cs" />
+    <Compile Include="Controladores\ModeloController.cs" />
+    <Compile Include="Controladores\PerfilController.cs" />
+    <Compile Include="Controladores\TurnoController.cs" />
+    <Compile Include="Controladores\UsuarioController.cs" />
     <Compile Include="Modelo\ColorModel.cs" />
+    <Compile Include="Modelo\DefectoModel.cs" />
     <Compile Include="Modelo\EmpleadoModel.cs" />
+    <Compile Include="Modelo\HallazgoModel.cs" />
+    <Compile Include="Modelo\HorarioModel.cs" />
     <Compile Include="Modelo\LineaDeTrabajoModel.cs" />
     <Compile Include="Modelo\ModeloModel.cs" />
     <Compile Include="Modelo\OrdenDeProduccionModel.cs" />
     <Compile Include="Modelo\PerfilModel.cs" />
+    <Compile Include="Modelo\PieModel.cs" />
+    <Compile Include="Modelo\PrimeraModel.cs" />
+    <Compile Include="Modelo\TipoDefectoModel.cs" />
     <Compile Include="Modelo\TurnoModel.cs" />
     <Compile Include="Modelo\UsuarioModel.cs" />
-    <Compile Include="Vista\Color\Editar.cs">
+    <Compile Include="Vistas\Color\Editar.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Vista\Color\Editar.Designer.cs">
+    <Compile Include="Vistas\Color\Editar.Designer.cs">
       <DependentUpon>Editar.cs</DependentUpon>
     </Compile>
-    <Compile Include="Vista\Color\Indice.cs">
+    <Compile Include="Vistas\Color\Indice.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Vista\Color\Indice.Designer.cs">
+    <Compile Include="Vistas\Color\Indice.Designer.cs">
       <DependentUpon>Indice.cs</DependentUpon>
     </Compile>
-    <Compile Include="Vista\Color\Nuevo.cs">
+    <Compile Include="Vistas\Color\Nuevo.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Vista\Color\Nuevo.Designer.cs">
+    <Compile Include="Vistas\Color\Nuevo.Designer.cs">
       <DependentUpon>Nuevo.cs</DependentUpon>
     </Compile>
-    <Compile Include="Vista\Empleado\Editar.cs">
+    <Compile Include="Vistas\Empleado\Editar.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Vista\Empleado\Editar.Designer.cs">
+    <Compile Include="Vistas\Empleado\Editar.Designer.cs">
       <DependentUpon>Editar.cs</DependentUpon>
     </Compile>
-    <Compile Include="Vista\Empleado\Indice.cs">
+    <Compile Include="Vistas\Empleado\Indice.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Vista\Empleado\Indice.Designer.cs">
+    <Compile Include="Vistas\Empleado\Indice.Designer.cs">
       <DependentUpon>Indice.cs</DependentUpon>
     </Compile>
-    <Compile Include="Vista\Empleado\Nuevo.cs">
+    <Compile Include="Vistas\Empleado\Nuevo.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Vista\Empleado\Nuevo.Designer.cs">
+    <Compile Include="Vistas\Empleado\Nuevo.Designer.cs">
       <DependentUpon>Nuevo.cs</DependentUpon>
     </Compile>
-    <Compile Include="Vista\IniciarSesion.cs">
+    <Compile Include="Vistas\Horario\Editar.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Vista\IniciarSesion.Designer.cs">
+    <Compile Include="Vistas\Horario\Editar.Designer.cs">
+      <DependentUpon>Editar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\Horario\Nuevo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vistas\Horario\Nuevo.Designer.cs">
+      <DependentUpon>Nuevo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\IniciarSesion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vistas\IniciarSesion.Designer.cs">
       <DependentUpon>IniciarSesion.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Vista\LineaDeTrabajo\Editar.cs">
+    <Compile Include="Vistas\LineaDeTrabajo\Editar.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Vista\LineaDeTrabajo\Editar.Designer.cs">
+    <Compile Include="Vistas\LineaDeTrabajo\Editar.Designer.cs">
       <DependentUpon>Editar.cs</DependentUpon>
     </Compile>
-    <Compile Include="Vista\LineaDeTrabajo\Indice.cs">
+    <Compile Include="Vistas\LineaDeTrabajo\Indice.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Vista\LineaDeTrabajo\Indice.Designer.cs">
+    <Compile Include="Vistas\LineaDeTrabajo\Indice.Designer.cs">
       <DependentUpon>Indice.cs</DependentUpon>
     </Compile>
-    <Compile Include="Vista\LineaDeTrabajo\Nuevo.cs">
+    <Compile Include="Vistas\LineaDeTrabajo\Nuevo.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Vista\LineaDeTrabajo\Nuevo.Designer.cs">
+    <Compile Include="Vistas\LineaDeTrabajo\Nuevo.Designer.cs">
       <DependentUpon>Nuevo.cs</DependentUpon>
     </Compile>
-    <Compile Include="Vista\Modelo\Editar.cs">
+    <Compile Include="Vistas\Modelo\Editar.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Vista\Modelo\Editar.Designer.cs">
+    <Compile Include="Vistas\Modelo\Editar.Designer.cs">
       <DependentUpon>Editar.cs</DependentUpon>
     </Compile>
-    <Compile Include="Vista\Modelo\Indice.cs">
+    <Compile Include="Vistas\Modelo\Indice.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Vista\Modelo\Indice.Designer.cs">
+    <Compile Include="Vistas\Modelo\Indice.Designer.cs">
       <DependentUpon>Indice.cs</DependentUpon>
     </Compile>
-    <Compile Include="Vista\Modelo\Nuevo.cs">
+    <Compile Include="Vistas\Modelo\Nuevo.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Vista\Modelo\Nuevo.Designer.cs">
+    <Compile Include="Vistas\Modelo\Nuevo.Designer.cs">
       <DependentUpon>Nuevo.cs</DependentUpon>
     </Compile>
-    <Compile Include="Vista\Panel.cs">
+    <Compile Include="Vistas\Panel.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Vista\Panel.Designer.cs">
+    <Compile Include="Vistas\Panel.Designer.cs">
       <DependentUpon>Panel.cs</DependentUpon>
     </Compile>
-    <Compile Include="Vista\Perfil\Editar.cs">
+    <Compile Include="Vistas\Perfil\Editar.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Vista\Perfil\Editar.Designer.cs">
+    <Compile Include="Vistas\Perfil\Editar.Designer.cs">
       <DependentUpon>Editar.cs</DependentUpon>
     </Compile>
-    <Compile Include="Vista\Perfil\Indice.cs">
+    <Compile Include="Vistas\Perfil\Indice.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Vista\Perfil\Indice.Designer.cs">
+    <Compile Include="Vistas\Perfil\Indice.Designer.cs">
       <DependentUpon>Indice.cs</DependentUpon>
     </Compile>
-    <Compile Include="Vista\Perfil\Nuevo.cs">
+    <Compile Include="Vistas\Perfil\Nuevo.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Vista\Perfil\Nuevo.Designer.cs">
+    <Compile Include="Vistas\Perfil\Nuevo.Designer.cs">
       <DependentUpon>Nuevo.cs</DependentUpon>
     </Compile>
-    <Compile Include="Vista\Turno\Editar.cs">
+    <Compile Include="Vistas\Turno\Editar.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Vista\Turno\Editar.Designer.cs">
+    <Compile Include="Vistas\Turno\Editar.Designer.cs">
       <DependentUpon>Editar.cs</DependentUpon>
     </Compile>
-    <Compile Include="Vista\Turno\Indice.cs">
+    <Compile Include="Vistas\Turno\Indice.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Vista\Turno\Indice.Designer.cs">
+    <Compile Include="Vistas\Turno\Indice.Designer.cs">
       <DependentUpon>Indice.cs</DependentUpon>
     </Compile>
-    <Compile Include="Vista\Turno\Nuevo.cs">
+    <Compile Include="Vistas\Turno\Nuevo.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Vista\Turno\Nuevo.Designer.cs">
+    <Compile Include="Vistas\Turno\Nuevo.Designer.cs">
       <DependentUpon>Nuevo.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Vista\Color\Editar.resx">
+    <EmbeddedResource Include="Vistas\Color\Editar.resx">
       <DependentUpon>Editar.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Vista\Color\Indice.resx">
+    <EmbeddedResource Include="Vistas\Color\Indice.resx">
       <DependentUpon>Indice.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Vista\Color\Nuevo.resx">
+    <EmbeddedResource Include="Vistas\Color\Nuevo.resx">
       <DependentUpon>Nuevo.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Vista\Empleado\Editar.resx">
+    <EmbeddedResource Include="Vistas\Empleado\Editar.resx">
       <DependentUpon>Editar.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Vista\Empleado\Indice.resx">
+    <EmbeddedResource Include="Vistas\Empleado\Indice.resx">
       <DependentUpon>Indice.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Vista\Empleado\Nuevo.resx">
+    <EmbeddedResource Include="Vistas\Empleado\Nuevo.resx">
       <DependentUpon>Nuevo.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Vista\IniciarSesion.resx">
+    <EmbeddedResource Include="Vistas\Horario\Editar.resx">
+      <DependentUpon>Editar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vistas\Horario\Nuevo.resx">
+      <DependentUpon>Nuevo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vistas\IniciarSesion.resx">
       <DependentUpon>IniciarSesion.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -215,37 +240,43 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Vista\LineaDeTrabajo\Indice.resx">
-      <DependentUpon>Indice.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Vista\Modelo\Editar.resx">
+    <EmbeddedResource Include="Vistas\LineaDeTrabajo\Editar.resx">
       <DependentUpon>Editar.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Vista\Modelo\Indice.resx">
+    <EmbeddedResource Include="Vistas\LineaDeTrabajo\Indice.resx">
       <DependentUpon>Indice.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Vista\Modelo\Nuevo.resx">
+    <EmbeddedResource Include="Vistas\LineaDeTrabajo\Nuevo.resx">
       <DependentUpon>Nuevo.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Vista\Panel.resx">
+    <EmbeddedResource Include="Vistas\Modelo\Editar.resx">
+      <DependentUpon>Editar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vistas\Modelo\Indice.resx">
+      <DependentUpon>Indice.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vistas\Modelo\Nuevo.resx">
+      <DependentUpon>Nuevo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vistas\Panel.resx">
       <DependentUpon>Panel.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Vista\Perfil\Editar.resx">
+    <EmbeddedResource Include="Vistas\Perfil\Editar.resx">
       <DependentUpon>Editar.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Vista\Perfil\Indice.resx">
+    <EmbeddedResource Include="Vistas\Perfil\Indice.resx">
       <DependentUpon>Indice.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Vista\Perfil\Nuevo.resx">
+    <EmbeddedResource Include="Vistas\Perfil\Nuevo.resx">
       <DependentUpon>Nuevo.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Vista\Turno\Editar.resx">
+    <EmbeddedResource Include="Vistas\Turno\Editar.resx">
       <DependentUpon>Editar.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Vista\Turno\Indice.resx">
+    <EmbeddedResource Include="Vistas\Turno\Indice.resx">
       <DependentUpon>Indice.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Vista\Turno\Nuevo.resx">
+    <EmbeddedResource Include="Vistas\Turno\Nuevo.resx">
       <DependentUpon>Nuevo.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
@@ -263,7 +294,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Vista\OrdenDeProduccion\" />
+    <Folder Include="Vistas\OrdenDeProduccion\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

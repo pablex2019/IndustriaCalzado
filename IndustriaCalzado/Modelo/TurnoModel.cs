@@ -9,9 +9,9 @@ namespace IndustriaCalzado.Modelo
     public class TurnoModel
     {
         public int Id { get; set; }
-        public string Descripcion { get; set; }
-        public string HoraDesde { get; set; }
-        public string HoraHasta { get; set; }
+        public int Codigo { get; set; }
+        public string Descripcion { get; set; } //Mañana-Tarde-Noche
+        public List<HorarioModel> HorarioModels { get; set; }
         public bool Estado { get; set; }
     }
 }

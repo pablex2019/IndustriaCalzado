@@ -9,6 +9,7 @@ namespace IndustriaCalzado.Modelo
     public class LineaDeTrabajoModel
     {
         public int Id { get; set; }
+        public int Codigo { get; set; }
         public List<OrdenDeProduccionModel> OrdenesDeProduccionModel { get; set; }
         public bool Estado;
     }

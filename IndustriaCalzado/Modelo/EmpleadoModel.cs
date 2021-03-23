@@ -16,6 +16,7 @@ namespace IndustriaCalzado.Modelo
         public string Sexo { get; set; }
         public PerfilModel PerfilModel { get; set; }
         public TurnoModel TurnoModel { get; set; }
+        public HorarioModel HorarioModel { get; set; }
         public UsuarioModel UsuarioModel { get; set; }
         public bool Estado { get; set; }
     }

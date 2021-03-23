@@ -1,1 +1,1 @@
-[{"Id":1,"Descripcion":"Turno Mañana","HoraDesde":"08:00","HoraHasta":"12:00","Estado":false},{"Id":2,"Descripcion":"Turno Tarde","HoraDesde":"12:00","HoraHasta":"18:00","Estado":false},{"Id":3,"Descripcion":"Turno Noche","HoraDesde":"18:00","HoraHasta":"22:00","Estado":false}]
+[{"Id":1,"Descripcion":"Turno Mañana","HoraDesde":"06:00","HoraHasta":"11:00","Estado":false},{"Id":2,"Descripcion":"Turno Tarde","HoraDesde":"11:00","HoraHasta":"18:00","Estado":false},{"Id":3,"Descripcion":"Turno Noche","HoraDesde":"18:00","HoraHasta":"23:00","Estado":false}]
