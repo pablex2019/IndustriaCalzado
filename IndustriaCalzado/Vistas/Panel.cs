@@ -16,6 +16,7 @@ namespace IndustriaCalzado.Vista
         private UsuarioController UsuarioController;
         private ColorController ColorController;
         private ModeloController ModeloController;
+        private PerfilController PerfilController;
 
         public Panel()
         {
@@ -23,6 +24,7 @@ namespace IndustriaCalzado.Vista
             UsuarioController = new UsuarioController("Usuarios");
             ColorController = new ColorController("Colores");
             ModeloController = new ModeloController("Modelos");
+            PerfilController = new PerfilController("Perfiles");
         }
         private void mnuColor_Click(object sender, EventArgs e)
         {
@@ -33,6 +35,7 @@ namespace IndustriaCalzado.Vista
             UsuarioController.Salir("Usuarios", this);
             ColorController.Salir("Colores");
             ModeloController.Salir("Modelos");
+            PerfilController.Salir("Perfiles");
         }
 
         private void mnuModelo_Click(object sender, EventArgs e)

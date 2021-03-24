@@ -55,18 +55,33 @@ namespace IndustriaCalzado.Controlador
             Leer();
             return ListaModelos.FirstOrDefault(x => x.Sku == Sku && x.Estado == false);
         }
-        public void Existe(Vista.Modelo.Nuevo Nuevo, DataGridView Grilla)
+        public void Existe(int Operacion,Vista.Modelo.Nuevo Nuevo, Vista.Modelo.Editar Editar, DataGridView Grilla)
         {
             Leer();
             if (ListaModelos.Count >= 0)
             {
-                if (ListaModelos.Any(x => (x.Sku == Nuevo.txtSku.Text || x.Denominación == Nuevo.txtDenominacion.Text) && x.Estado != true) == false)
+                switch (Operacion)
                 {
-                    ABM(1, Nuevo, null, null, Grilla);
-                }
-                else
-                {
-                    MessageBox.Show("Ya se encuentra registrado el modelo, ya sea con la misma denominación o el mismo sku", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    case 1:
+                        if (ListaModelos.Any(x => (x.Sku == Nuevo.txtSku.Text || x.Denominación == Nuevo.txtDenominacion.Text) && x.Estado != true) == false)
+                        {
+                            ABM(1, Nuevo, null, null, Grilla);
+                        }
+                        else
+                        {
+                            MessageBox.Show("Ya se encuentra registrado el color, ya sea con la misma descripción o el mismo codigo", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                        break;
+                    case 2:
+                        if (ListaModelos.Any(x => (x.Sku == Editar.txtSku.Text && x.Denominación == Editar.txtDenominacion.Text) && x.Estado != true) == false)
+                        {
+                            ABM(2, null, Editar, Editar.txtSku.Text, Grilla);
+                        }
+                        else
+                        {
+                            MessageBox.Show("Ya se encuentra registrado el color, ya sea con la misma descripción o el mismo codigo", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                        break;
                 }
             }
         }
@@ -92,6 +107,9 @@ namespace IndustriaCalzado.Controlador
                         modelo.Estado = false;
                         ListaModelos.Add(modelo);
                         MessageBox.Show("Modelo Agregado", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        Nuevo.txtSku.Text = string.Empty;
+                        Nuevo.txtDenominacion.Text = string.Empty; 
+                        Nuevo.txtObjetivo.Text = string.Empty;
                         break;
                     case 2:
                         modelo = ObtenerModelo(Sku);

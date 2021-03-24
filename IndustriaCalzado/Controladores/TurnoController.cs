@@ -55,14 +55,14 @@ namespace IndustriaCalzado.Controlador
             Leer();
             return ListaTurnos.FirstOrDefault(x => x.Descripcion == Descripcion);
         }
-        public void Existe(Vista.Turno.Nuevo Nuevo, DataGridView Grilla)
+        public void Existe(Vista.Turno.Nuevo Nuevo, DataGridView GrillaTurno, DataGridView GrillaHorario)
         {
             Leer();
             if (ListaTurnos.Count >= 0)
             {
                 if (ListaTurnos.Any(x => x.Descripcion == Nuevo.txtDescripcion.Text) == false)
                 {
-                    ABM(1, Nuevo, null, null, Grilla);
+                    ABM(1, Nuevo, null, null, GrillaTurno, GrillaHorario);
                 }
                 else
                 {
@@ -76,9 +76,10 @@ namespace IndustriaCalzado.Controlador
         /// </summary>
         /// <param name="Operacion"></param>
         /// <param name="Nuevo"></param>
-        public void ABM(int Operacion, Vista.Turno.Nuevo Nuevo, Vista.Turno.Editar Editar, string Descripcion, DataGridView Grilla)
+        public void ABM(int Operacion, Vista.Turno.Nuevo Nuevo, Vista.Turno.Editar Editar, string Descripcion, DataGridView GrillaTurnos,DataGridView GrillaHorarios)
         {
             TurnoModel turno = new TurnoModel();
+            List<HorarioModel> ListadoHorarios = new List<HorarioModel>();
             if (!string.IsNullOrEmpty(Descripcion) || Operacion != 3)
             {
                 switch (Operacion)
@@ -87,11 +88,28 @@ namespace IndustriaCalzado.Controlador
                     case 1:
                         //Agregar Turno
                         turno.Id = ObtenerUltimoIdTurno();
+                        turno.Codigo = Convert.ToInt32(Nuevo.txtCodigo.Text);
                         turno.Descripcion = Nuevo.txtDescripcion.Text;
                         turno.Estado = false;
+                        //Agregar Horario
+                        HorarioModel horario = new HorarioModel();
+                        for (int fila = 0;fila <GrillaHorarios.Rows.Count;fila ++)
+                        {
+                            //for(int col = 0; col <GrillaHorarios.Rows[fila].Cells.Count;col++)
+                            //{
+                                horario.Id = Convert.ToInt32(GrillaHorarios.Rows[fila].Cells[0].Value.ToString());
+                                horario.Codigo = Convert.ToInt32(GrillaHorarios.Rows[fila].Cells[1].Value.ToString());
+                                horario.HoraDesde = GrillaHorarios.Rows[fila].Cells[2].Value.ToString();
+                                horario.HoraHasta = GrillaHorarios.Rows[fila].Cells[3].Value.ToString();
+                                horario.Estado = false;
+                                ListadoHorarios.Add(horario);
+                            //}
+                        }
+                        turno.HorarioModels = ListadoHorarios;
                         ListaTurnos.Add(turno);
                         MessageBox.Show("Turno Agregado", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        
+                        Nuevo.txtDescripcion.Text = string.Empty;
+                        GrillaHorarios.DataSource = 0;
                         break;
                     case 2:
                         turno = ObtenerTurno(Descripcion);
@@ -106,7 +124,7 @@ namespace IndustriaCalzado.Controlador
                         break;
                 }
                 Guardar();
-                Grilla.DataSource = Listado();
+                GrillaTurnos.DataSource = Listado();
             }
             else
             {

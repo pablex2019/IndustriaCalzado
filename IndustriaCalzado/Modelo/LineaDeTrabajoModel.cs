@@ -11,6 +11,6 @@ namespace IndustriaCalzado.Modelo
         public int Id { get; set; }
         public int Codigo { get; set; }
         public List<OrdenDeProduccionModel> OrdenesDeProduccionModel { get; set; }
-        public bool Estado;
+        public bool Estado { get; set; }
     }
 }

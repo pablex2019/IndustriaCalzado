@@ -28,16 +28,8 @@ namespace IndustriaCalzado.Vista.Turno
         {
             dgvHorarios.DataSource = HorarioController.Listado();
         }
-        private void btnGuardar_Click(object sender, EventArgs e)
-        {
-            TurnoController.Existe(this, Grilla);
-        }
 
-        private void btnCancelar_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
+        #region Horario
         private void btnNuevo_Click(object sender, EventArgs e)
         {
             Vistas.Horario.Nuevo nuevo = new Vistas.Horario.Nuevo();
@@ -47,14 +39,33 @@ namespace IndustriaCalzado.Vista.Turno
 
         private void btnEditar_Click(object sender, EventArgs e)
         {
-
+            //if (!string.IsNullOrEmpty(Sku))
+            //{
+            //    Modelo.Editar Editar = new Modelo.Editar();
+            //    Editar.Sku = Sku;
+            //    Editar.Grilla = dgvModelos;
+            //    Editar.Show();
+            //}
+            //else
+            //{
+            //    MessageBox.Show("Debe seleccionar un modelo", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            //}
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
+            //Turno.ABM(3, null, null, Sku, Grilla = dgvModelos);
+        }
+        #endregion
 
+        private void btnGuardar_Click(object sender, EventArgs e)
+        {
+            TurnoController.Existe(this, Grilla,dgvHorarios);
         }
 
-        
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

@@ -52,6 +52,7 @@
     <Compile Include="Controladores\ColorController.cs" />
     <Compile Include="Controladores\EmpleadoController.cs" />
     <Compile Include="Controladores\HorarioController.cs" />
+    <Compile Include="Controladores\LineaDeTrabajoController.cs" />
     <Compile Include="Controladores\ModeloController.cs" />
     <Compile Include="Controladores\PerfilController.cs" />
     <Compile Include="Controladores\TurnoController.cs" />
@@ -162,6 +163,12 @@
     <Compile Include="Vistas\Modelo\Nuevo.Designer.cs">
       <DependentUpon>Nuevo.cs</DependentUpon>
     </Compile>
+    <Compile Include="Vistas\OrdenDeProduccion\Indice.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vistas\OrdenDeProduccion\Indice.Designer.cs">
+      <DependentUpon>Indice.cs</DependentUpon>
+    </Compile>
     <Compile Include="Vistas\Panel.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -258,6 +265,9 @@
     <EmbeddedResource Include="Vistas\Modelo\Nuevo.resx">
       <DependentUpon>Nuevo.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Vistas\OrdenDeProduccion\Indice.resx">
+      <DependentUpon>Indice.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Vistas\Panel.resx">
       <DependentUpon>Panel.cs</DependentUpon>
     </EmbeddedResource>
@@ -293,8 +303,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Vistas\OrdenDeProduccion\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

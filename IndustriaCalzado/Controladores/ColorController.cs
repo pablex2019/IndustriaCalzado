@@ -55,18 +55,33 @@ namespace IndustriaCalzado.Controlador
             Leer();
             return ListaColores.FirstOrDefault(x => x.Codigo == Codigo && x.Estado == false);
         }
-        public void Existe(Vista.Color.Nuevo Nuevo,DataGridView Grilla)
+        public void Existe(int Operacion,Vista.Color.Nuevo Nuevo,Vista.Color.Editar Editar, DataGridView Grilla)
         {
             Leer();
             if (ListaColores.Count >= 0)
             {
-                if (ListaColores.Any(x => (x.Codigo == Convert.ToInt32(Nuevo.txtCodigo.Text) || x.Descripcion == Nuevo.txtDescripcion.Text) && x.Estado != true) == false)
+                switch (Operacion)
                 {
-                    ABM(1, Nuevo, null, 0, Grilla);
-                }
-                else
-                {
-                    MessageBox.Show("Ya se encuentra registrado el color, ya sea con la misma descripción o el mismo codigo", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    case 1:
+                        if (ListaColores.Any(x => (x.Codigo == Convert.ToInt32(Nuevo.txtCodigo.Text) || x.Descripcion == Nuevo.txtDescripcion.Text) && x.Estado != true) == false)
+                        {
+                            ABM(1, Nuevo, null, 0, Grilla);
+                        }
+                        else
+                        {
+                            MessageBox.Show("Ya se encuentra registrado el color, ya sea con la misma descripción o el mismo codigo", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                        break;
+                    case 2:
+                        if (ListaColores.Any(x => (x.Codigo == Convert.ToInt32(Editar.txtCodigo.Text) && x.Descripcion == Editar.txtDescripcion.Text) && x.Estado != true) == false)
+                        {
+                            ABM(2, null, Editar, Convert.ToInt32(Editar.txtCodigo.Text), Grilla);
+                        }
+                        else
+                        {
+                            MessageBox.Show("Ya se encuentra registrado el color, ya sea con la misma descripción o el mismo codigo", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                        break;
                 }
             }
         }
@@ -91,6 +106,8 @@ namespace IndustriaCalzado.Controlador
                         color.Estado = false;
                         ListaColores.Add(color);
                         MessageBox.Show("Color Agregado", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        Nuevo.txtCodigo.Text = string.Empty;
+                        Nuevo.txtDescripcion.Text = string.Empty;
                         break;
                     case 2:
                         color = ObtenerColor(Codigo);

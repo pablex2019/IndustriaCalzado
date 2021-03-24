@@ -32,7 +32,7 @@ namespace IndustriaCalzado.Vista.Color
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            ColorController.ABM(2, null,this,Codigo, Grilla);
+            ColorController.Existe(2,null, this, Grilla);
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)

@@ -33,7 +33,7 @@ namespace IndustriaCalzado.Vista.Modelo
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            ModeloController.ABM(2, null, this, Sku, Grilla);
+            ModeloController.Existe(2, null, this, Grilla);
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)

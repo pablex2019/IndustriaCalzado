@@ -1,4 +1,5 @@
-﻿using System;
+﻿using IndustriaCalzado.Controladores;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,17 +13,22 @@ namespace IndustriaCalzado.Vista.LineaDeTrabajo
 {
     public partial class Indice : Form
     {
+        private LineaDeTrabajoController LineaDeTrabajoController;
+
         public Indice()
         {
             InitializeComponent();
+            LineaDeTrabajoController = new LineaDeTrabajoController("Linea de Trabajo");
         }
         private void Indice_Load(object sender, EventArgs e)
         {
-
+            dgvLineaDeTrabajo.DataSource = LineaDeTrabajoController.Listado();
         }
         private void btnNuevo_Click(object sender, EventArgs e)
         {
-
+            Vista.LineaDeTrabajo.Nuevo nuevo = new Vista.LineaDeTrabajo.Nuevo();
+            nuevo.Grilla = dgvLineaDeTrabajo;
+            nuevo.Show();
         }
         private void btnEditar_Click(object sender, EventArgs e)
         {
@@ -31,6 +37,11 @@ namespace IndustriaCalzado.Vista.LineaDeTrabajo
         private void btnEliminar_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnSalir_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

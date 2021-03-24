@@ -24,7 +24,7 @@ namespace IndustriaCalzado.Vista.Color
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            ColorController.Existe(this,Grilla);
+            ColorController.Existe(1,this,null,Grilla);
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)

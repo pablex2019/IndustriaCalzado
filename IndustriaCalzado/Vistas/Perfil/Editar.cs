@@ -29,7 +29,7 @@ namespace IndustriaCalzado.Vista.Perfil
         }
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            PerfilController.ABM(2, null, this, Descripcion, Grilla);
+            PerfilController.Existe(2, null, this, Grilla);
         }
         private void btnCancelar_Click(object sender, EventArgs e)
         {

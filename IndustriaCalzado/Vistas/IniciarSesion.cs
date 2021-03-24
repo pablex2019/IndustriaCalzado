@@ -17,6 +17,7 @@ namespace IndustriaCalzado
         private UsuarioController UsuarioController;
         private ColorController ColorController;
         private ModeloController ModeloController;
+        private PerfilController PerfilController;
 
         public IniciarSesion()
         {
@@ -24,6 +25,7 @@ namespace IndustriaCalzado
             UsuarioController = new UsuarioController("Usuarios");
             ColorController = new ColorController("Colores");
             ModeloController = new ModeloController("Modelos");
+            PerfilController = new PerfilController("Perfiles");
         }
 
         private void btnEntrar_Click(object sender, EventArgs e)
@@ -36,6 +38,7 @@ namespace IndustriaCalzado
             UsuarioController.Salir("Usuarios", null);
             ColorController.Salir("Colores");
             ModeloController.Salir("Modelos");
+            PerfilController.Salir("Perfiles");
         }
     }
 }

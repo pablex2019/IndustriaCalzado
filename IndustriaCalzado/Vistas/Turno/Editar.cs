@@ -36,7 +36,7 @@ namespace IndustriaCalzado.Vista.Turno
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            TurnoController.ABM(2, null, this, Descripcion, Grilla);
+            TurnoController.ABM(2, null, this, Descripcion, Grilla,null);
         }
 
         private void btnNuevo_Click(object sender, EventArgs e)

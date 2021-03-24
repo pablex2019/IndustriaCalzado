@@ -53,8 +53,7 @@ namespace IndustriaCalzado.Vista.Turno
         }
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-            TurnoController.ABM(3, null, null, Descripcion, Grilla = dgvTurnos);
-            dgvTurnos.DataSource = TurnoController.Listado();
+            TurnoController.ABM(3, null, null, Descripcion, Grilla = dgvTurnos,null);
         }
         private void btnSalir_Click(object sender, EventArgs e)
         {

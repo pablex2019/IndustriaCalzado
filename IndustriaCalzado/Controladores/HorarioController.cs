@@ -66,7 +66,7 @@ namespace IndustriaCalzado.Controladores
                 }
                 else
                 {
-                    MessageBox.Show("Ya se encuentra registrado el horario, con el mismo rango de horario", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Ya se encuentra registrado el mismo rango de horario", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         }
@@ -84,10 +84,12 @@ namespace IndustriaCalzado.Controladores
                         horario.HoraHasta = Nuevo.txtHoraHasta.Text;
                         horario.Estado = false;
                         ListaHorarios.Add(horario);
+                        Nuevo.txtCodigo.Text = string.Empty;
+                        Nuevo.txtHoraDesde.Text = string.Empty;
+                        Nuevo.txtHoraHasta.Text = string.Empty;
                         MessageBox.Show("Horario Agregado", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         break;
                     case 2:
-                        //horario = ObtenerHorario(Codigo);
                         
                         //MessageBox.Show("Modelo Editado", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         //Editar.Close();

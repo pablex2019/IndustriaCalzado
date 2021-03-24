@@ -55,19 +55,35 @@ namespace IndustriaCalzado.Controlador
             Leer();
             return ListaPerfiles.FirstOrDefault(x => x.Descripcion == Descripcion && x.Estado == false);
         }
-        public void Existe(Vista.Perfil.Nuevo Nuevo, DataGridView Grilla)
+        public void Existe(int Operacion,Vista.Perfil.Nuevo Nuevo,Vista.Perfil.Editar Editar, DataGridView Grilla)
         {
             Leer();
             if (ListaPerfiles.Count >= 0)
             {
-                if (ListaPerfiles.Any(x => (x.Descripcion == Nuevo.txtDescripcion.Text) && x.Estado != true) == false)
+                switch(Operacion)
                 {
-                    ABM(1, Nuevo, null, string.Empty, Grilla);
+                    case 1:
+                        if (ListaPerfiles.Any(x => (x.Descripcion == Nuevo.txtDescripcion.Text) && x.Estado != true) == false)
+                        {
+                            ABM(1, Nuevo, null, string.Empty, Grilla);
+                        }
+                        else
+                        {
+                            MessageBox.Show("Ya existe el perfil", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                        break;
+                    case 2:
+                        if (ListaPerfiles.Any(x => (x.Descripcion == Editar.txtDescripcion.Text) && x.Estado != true) == false)
+                        {
+                            ABM(2, null,Editar, string.Empty, Grilla);
+                        }
+                        else
+                        {
+                            MessageBox.Show("Ya existe el perfil", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                        break;
                 }
-                else
-                {
-                    MessageBox.Show("Ya existe el perfil", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
+                
             }
         }
         /// <summary>
