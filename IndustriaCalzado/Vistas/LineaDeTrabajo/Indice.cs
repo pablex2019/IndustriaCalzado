@@ -27,7 +27,6 @@ namespace IndustriaCalzado.Vista.LineaDeTrabajo
         private void btnNuevo_Click(object sender, EventArgs e)
         {
             Vista.LineaDeTrabajo.Nuevo nuevo = new Vista.LineaDeTrabajo.Nuevo();
-            nuevo.Grilla = dgvLineaDeTrabajo;
             nuevo.Show();
         }
         private void btnEditar_Click(object sender, EventArgs e)

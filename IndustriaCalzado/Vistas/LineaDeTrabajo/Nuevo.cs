@@ -41,7 +41,8 @@ namespace IndustriaCalzado.Vista.LineaDeTrabajo
 
         private void btnNuevo_Click(object sender, EventArgs e)
         {
-
+            Vistas.OrdenDeProduccion.Nuevo nuevo = new Vistas.OrdenDeProduccion.Nuevo();
+            nuevo.Show();
         }
 
         private void btnEditar_Click(object sender, EventArgs e)

@@ -63,9 +63,9 @@
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(205, 10);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(80, 13);
+            this.label3.Size = new System.Drawing.Size(97, 13);
             this.label3.TabIndex = 4;
-            this.label3.Text = "Fecha de Inicio";
+            this.label3.Text = "Fecha de Creación";
             // 
             // txtFechaInicio
             // 

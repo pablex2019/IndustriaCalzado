@@ -42,11 +42,13 @@ namespace IndustriaCalzado.Vista
         private void mnuCerrarSesion_Click(object sender, EventArgs e)
         {
             //UsuarioController.Salir("Usuarios", this);
-            ColorController.Salir("Colores");
-            ModeloController.Salir("Modelos");
-            PerfilController.Salir("Perfiles");
-            TurnoController.Salir("Turnos");
-            HorarioController.Salir("Horarios");
+            //ColorController.Salir("Colores");
+            //ModeloController.Salir("Modelos");
+            //PerfilController.Salir("Perfiles");
+            //TurnoController.Salir("Turnos");
+            //HorarioController.Salir("Horarios");
+            new IniciarSesion().Show();
+            this.Hide();
         }
 
         private void mnuModelo_Click(object sender, EventArgs e)
