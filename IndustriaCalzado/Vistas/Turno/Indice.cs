@@ -14,7 +14,7 @@ namespace IndustriaCalzado.Vista.Turno
     public partial class Indice : Form
     {
         public DataGridView Grilla; 
-        private string Descripcion;
+        private int Codigo;
         private TurnoController TurnoController;
 
         public Indice()
@@ -26,9 +26,15 @@ namespace IndustriaCalzado.Vista.Turno
         {
             dgvTurnos.DataSource = TurnoController.Listado();
         }
-        private void dgvTurnos_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void dgvTurnos_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            Descripcion = dgvTurnos.Rows[e.RowIndex].Cells[1].Value.ToString();
+            Codigo = Convert.ToInt32(dgvTurnos.Rows[e.RowIndex].Cells[1].Value.ToString());
+        }
+        private void dgvTurnos_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            Vistas.Turno.Ver ver = new Vistas.Turno.Ver();
+            ver.Codigo = Codigo;
+            ver.Show();
         }
         private void btnNuevo_Click(object sender, EventArgs e)
         {
@@ -39,21 +45,21 @@ namespace IndustriaCalzado.Vista.Turno
 
         private void btnEditar_Click(object sender, EventArgs e)
         {
-            if (!string.IsNullOrEmpty(Descripcion))
+            if (Codigo!=0)
             {
                 Turno.Editar editar = new Editar();
-                editar.Descripcion = Descripcion;
+                editar.Codigo = Codigo;
                 editar.Grilla = dgvTurnos;
                 editar.Show();
             }
             else
             {
-                MessageBox.Show("Debe seleccionar un color", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Debe seleccionar un turno", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-            TurnoController.ABM(3, null, null, Descripcion, Grilla = dgvTurnos,null);
+            TurnoController.ABM(3, null, null, Codigo, Grilla = dgvTurnos,null);
         }
         private void btnSalir_Click(object sender, EventArgs e)
         {

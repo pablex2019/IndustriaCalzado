@@ -45,8 +45,8 @@
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.mnuColor,
             this.mnuModelo,
-            this.mnuTurno,
             this.mnuPerfil,
+            this.mnuTurno,
             this.mnuEmpleado,
             this.mnuOrdenesDeProduccion,
             this.mnuLineasDeTrabajo,

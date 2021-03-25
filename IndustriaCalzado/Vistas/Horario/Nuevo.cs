@@ -23,7 +23,7 @@ namespace IndustriaCalzado.Vistas.Horario
         }
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            HorarioController.Existe(this, Grilla);
+            HorarioController.Existe(1,this,null, Grilla);
         }
         private void btnCancelar_Click(object sender, EventArgs e)
         {

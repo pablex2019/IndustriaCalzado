@@ -1,6 +1,6 @@
-﻿namespace IndustriaCalzado.Vista.Turno
+﻿namespace IndustriaCalzado.Vistas.Turno
 {
-    partial class Editar
+    partial class Ver
     {
         /// <summary>
         /// Required designer variable.
@@ -30,24 +30,21 @@
         {
             this.txtCodigo = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.btnEditar = new System.Windows.Forms.Button();
-            this.btnEliminar = new System.Windows.Forms.Button();
-            this.btnNuevo = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.dgvHorarios = new System.Windows.Forms.DataGridView();
-            this.btnCancelar = new System.Windows.Forms.Button();
-            this.btnGuardar = new System.Windows.Forms.Button();
             this.txtDescripcion = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.btnSalir = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvHorarios)).BeginInit();
             this.SuspendLayout();
             // 
             // txtCodigo
             // 
+            this.txtCodigo.Enabled = false;
             this.txtCodigo.Location = new System.Drawing.Point(15, 25);
             this.txtCodigo.Name = "txtCodigo";
-            this.txtCodigo.Size = new System.Drawing.Size(368, 20);
-            this.txtCodigo.TabIndex = 38;
+            this.txtCodigo.Size = new System.Drawing.Size(371, 20);
+            this.txtCodigo.TabIndex = 33;
             // 
             // label3
             // 
@@ -55,38 +52,8 @@
             this.label3.Location = new System.Drawing.Point(12, 9);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(40, 13);
-            this.label3.TabIndex = 37;
+            this.label3.TabIndex = 32;
             this.label3.Text = "Codigo";
-            // 
-            // btnEditar
-            // 
-            this.btnEditar.Location = new System.Drawing.Point(78, 259);
-            this.btnEditar.Name = "btnEditar";
-            this.btnEditar.Size = new System.Drawing.Size(56, 23);
-            this.btnEditar.TabIndex = 36;
-            this.btnEditar.Text = "Editar";
-            this.btnEditar.UseVisualStyleBackColor = true;
-            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
-            // 
-            // btnEliminar
-            // 
-            this.btnEliminar.Location = new System.Drawing.Point(140, 259);
-            this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(60, 23);
-            this.btnEliminar.TabIndex = 35;
-            this.btnEliminar.Text = "Eliminar";
-            this.btnEliminar.UseVisualStyleBackColor = true;
-            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
-            // 
-            // btnNuevo
-            // 
-            this.btnNuevo.Location = new System.Drawing.Point(12, 260);
-            this.btnNuevo.Name = "btnNuevo";
-            this.btnNuevo.Size = new System.Drawing.Size(60, 23);
-            this.btnNuevo.TabIndex = 34;
-            this.btnNuevo.Text = "Nuevo";
-            this.btnNuevo.UseVisualStyleBackColor = true;
-            this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
             // 
             // label2
             // 
@@ -94,7 +61,7 @@
             this.label2.Location = new System.Drawing.Point(12, 88);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(98, 13);
-            this.label2.TabIndex = 33;
+            this.label2.TabIndex = 31;
             this.label2.Text = "Listado de Horarios";
             // 
             // dgvHorarios
@@ -102,33 +69,13 @@
             this.dgvHorarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvHorarios.Location = new System.Drawing.Point(12, 104);
             this.dgvHorarios.Name = "dgvHorarios";
+            this.dgvHorarios.ReadOnly = true;
             this.dgvHorarios.Size = new System.Drawing.Size(374, 150);
-            this.dgvHorarios.TabIndex = 32;
-            this.dgvHorarios.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvHorarios_CellClick);
-            // 
-            // btnCancelar
-            // 
-            this.btnCancelar.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.btnCancelar.Location = new System.Drawing.Point(78, 302);
-            this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(64, 23);
-            this.btnCancelar.TabIndex = 31;
-            this.btnCancelar.Text = "Cancelar";
-            this.btnCancelar.UseVisualStyleBackColor = true;
-            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click_1);
-            // 
-            // btnGuardar
-            // 
-            this.btnGuardar.Location = new System.Drawing.Point(12, 302);
-            this.btnGuardar.Name = "btnGuardar";
-            this.btnGuardar.Size = new System.Drawing.Size(60, 23);
-            this.btnGuardar.TabIndex = 30;
-            this.btnGuardar.Text = "Guardar";
-            this.btnGuardar.UseVisualStyleBackColor = true;
-            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click_1);
+            this.dgvHorarios.TabIndex = 30;
             // 
             // txtDescripcion
             // 
+            this.txtDescripcion.Enabled = false;
             this.txtDescripcion.Location = new System.Drawing.Point(15, 65);
             this.txtDescripcion.Name = "txtDescripcion";
             this.txtDescripcion.Size = new System.Drawing.Size(371, 20);
@@ -143,31 +90,38 @@
             this.label1.TabIndex = 28;
             this.label1.Text = "Descripcion";
             // 
-            // Editar
+            // btnSalir
+            // 
+            this.btnSalir.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnSalir.Location = new System.Drawing.Point(12, 261);
+            this.btnSalir.Name = "btnSalir";
+            this.btnSalir.Size = new System.Drawing.Size(64, 23);
+            this.btnSalir.TabIndex = 34;
+            this.btnSalir.Text = "Salir";
+            this.btnSalir.UseVisualStyleBackColor = true;
+            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
+            // 
+            // Ver
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ClientSize = new System.Drawing.Size(403, 335);
+            this.ClientSize = new System.Drawing.Size(401, 296);
             this.ControlBox = false;
+            this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.txtCodigo);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.btnEditar);
-            this.Controls.Add(this.btnEliminar);
-            this.Controls.Add(this.btnNuevo);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.dgvHorarios);
-            this.Controls.Add(this.btnCancelar);
-            this.Controls.Add(this.btnGuardar);
             this.Controls.Add(this.txtDescripcion);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "Editar";
+            this.Name = "Ver";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Turno - Editar";
-            this.Load += new System.EventHandler(this.Editar_Load);
+            this.Text = "Turno - Ver";
+            this.Load += new System.EventHandler(this.Ver_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvHorarios)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -178,14 +132,10 @@
 
         public System.Windows.Forms.TextBox txtCodigo;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Button btnEditar;
-        private System.Windows.Forms.Button btnEliminar;
-        private System.Windows.Forms.Button btnNuevo;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DataGridView dgvHorarios;
-        private System.Windows.Forms.Button btnCancelar;
-        private System.Windows.Forms.Button btnGuardar;
         public System.Windows.Forms.TextBox txtDescripcion;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button btnSalir;
     }
 }

@@ -55,19 +55,35 @@ namespace IndustriaCalzado.Controladores
             Leer();
             return ListaHorarios.FirstOrDefault(x => x.Codigo == Codigo && x.Estado == false);
         }
-        public void Existe(Vistas.Horario.Nuevo Nuevo, DataGridView Grilla)
+        public void Existe(int Operacion,Vistas.Horario.Nuevo Nuevo,Vistas.Horario.Editar Editar, DataGridView Grilla)
         {
             Leer();
             if (ListaHorarios.Count >= 0)
             {
-                if (ListaHorarios.Any(x => (x.HoraDesde == Nuevo.txtHoraDesde.Text || x.HoraHasta == Nuevo.txtHoraHasta.Text) && x.Estado != true) == false)
+                switch(Operacion)
                 {
-                    ABM(1, Nuevo, null, 0, Grilla);
+                    case 1:
+                        if (ListaHorarios.Any(x => (x.HoraDesde == Nuevo.txtHoraDesde.Text || x.HoraHasta == Nuevo.txtHoraHasta.Text || x.Codigo == Convert.ToInt32(Nuevo.txtCodigo.Text)) && x.Estado != true) == false)
+                        {
+                            ABM(1,Nuevo,null,0,Grilla);
+                        }
+                        else
+                        {
+                            MessageBox.Show("Ya se encuentra registrado el mismo rango de horario", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                        break;
+                    case 2:
+                        if (ListaHorarios.Any(x => (x.HoraDesde == Editar.txtHoraDesde.Text || x.HoraHasta == Editar.txtHoraHasta.Text && x.Codigo == Convert.ToInt32(Editar.txtCodigo.Text)) && x.Estado != true) == false)
+                        {
+                            ABM(2,null,Editar,Editar.Codigo,Grilla);
+                        }
+                        else
+                        {
+                            MessageBox.Show("Ya se encuentra registrado el mismo rango de horario", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                        break;
                 }
-                else
-                {
-                    MessageBox.Show("Ya se encuentra registrado el mismo rango de horario", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
+                
             }
         }
         public void ABM(int Operacion, Vistas.Horario.Nuevo Nuevo, Vistas.Horario.Editar Editar, int Codigo, DataGridView Grilla)
@@ -90,14 +106,17 @@ namespace IndustriaCalzado.Controladores
                         MessageBox.Show("Horario Agregado", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         break;
                     case 2:
-                        
-                        //MessageBox.Show("Modelo Editado", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        //Editar.Close();
+                        horario = ObtenerHorario(Codigo);
+                        horario.Codigo = Convert.ToInt32(Editar.txtCodigo.Text);
+                        horario.HoraDesde = Editar.txtHoraDesde.Text;
+                        horario.HoraHasta = Editar.txtHoraHasta.Text;
+                        MessageBox.Show("Horario Editado", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        Editar.Close();
                         break;
                     case 3:
-                        //modelo = ObtenerModelo(Sku);
-                        //modelo.Estado = true;
-                        //MessageBox.Show("Modelo Eliminado", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        horario = ObtenerHorario(Codigo);
+                        horario.Estado = true;
+                        MessageBox.Show("Horario Eliminado", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         break;
                 }
                 Guardar();
@@ -105,7 +124,7 @@ namespace IndustriaCalzado.Controladores
             }
             else
             {
-                MessageBox.Show("Debe seleccionar un modelo", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Debe seleccionar un horario", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
         public void Salir(string valor)

@@ -97,7 +97,7 @@ namespace IndustriaCalzado.Controlador
                         empleado.CorreoElectronico = Nuevo.txtCorreoElectronico.Text;
                         empleado.Sexo = Nuevo.cboSexo.Text;
                         empleado.PerfilModel = PerfilController.ObtenerPerfil(Nuevo.cboPerfil.Text);
-                        empleado.TurnoModel = TurnoController.ObtenerTurno(Nuevo.cboTurno.Text);
+                        //empleado.TurnoModel = TurnoController.ObtenerTurno(Nuevo.cboTurno.Text);
                         UsuarioController.ABM(1, Nuevo, null, empleado.Documento);
                         empleado.UsuarioModel = UsuarioController.ObtenerUsuario(Nuevo.txtUsuario.Text, Nuevo.txtClave.Text);
                         empleado.Estado = false;
@@ -115,7 +115,7 @@ namespace IndustriaCalzado.Controlador
                         empleado.CorreoElectronico = Nuevo.txtCorreoElectronico.Text;
                         empleado.Sexo = Nuevo.cboSexo.Text;
                         empleado.PerfilModel = PerfilController.ObtenerPerfil(Nuevo.cboPerfil.Text);
-                        empleado.TurnoModel = TurnoController.ObtenerTurno(Nuevo.cboTurno.Text);
+                        //empleado.TurnoModel = TurnoController.ObtenerTurno(Nuevo.cboTurno.Text);
                         UsuarioController.ABM(1, Nuevo, null, empleado.Documento);
                         empleado.UsuarioModel = UsuarioController.ObtenerUsuario(Nuevo.txtUsuario.Text, Nuevo.txtClave.Text);
                         empleado.Estado = false;

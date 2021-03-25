@@ -125,6 +125,7 @@
             this.dgvHorarios.Name = "dgvHorarios";
             this.dgvHorarios.Size = new System.Drawing.Size(374, 150);
             this.dgvHorarios.TabIndex = 21;
+            this.dgvHorarios.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvHorarios_CellClick);
             // 
             // label3
             // 
@@ -166,7 +167,6 @@
             this.Name = "Nuevo";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Turno - Nuevo";
-            this.Load += new System.EventHandler(this.Nuevo_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvHorarios)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -29,7 +29,6 @@ namespace IndustriaCalzado.Controlador
         }
         private void Guardar()
         {
-            //Convierto todos los datos a string
             this.DatosColores = JsonConvert.SerializeObject(this.ListaColores);
             this.AccesoADatos.Guardar(this.DatosColores);
         }

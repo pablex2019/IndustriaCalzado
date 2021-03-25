@@ -30,13 +30,6 @@ namespace IndustriaCalzado.Vista.Color
         {
             Codigo = Convert.ToInt32(dgvColores.Rows[e.RowIndex].Cells[1].Value.ToString());
         }
-        private void dgvColores_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            if (!string.IsNullOrEmpty(dgvColores.Rows[e.RowIndex].Cells[0].ToString())) 
-            { 
-                Codigo = Convert.ToInt32(dgvColores.Rows[e.RowIndex].Cells[0].ToString());
-            }
-        }
 
         private void btnNuevo_Click(object sender, EventArgs e)
         {

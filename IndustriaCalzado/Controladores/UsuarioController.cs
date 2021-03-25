@@ -91,17 +91,10 @@ namespace IndustriaCalzado.Controlador
                         //MessageBox.Show("Usuario Agregado", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         break;
                     case 2:
-                        //color = ObtenerColor(Codigo);
-                        //color.Codigo = Convert.ToInt32(Editar.txtCodigo.Text);
-                        //color.Descripcion = Editar.txtDescripcion.Text;
-                        //MessageBox.Show("Color Editado", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        //Grilla.DataSource = ListaColores.ToList();
-                        //Editar.Close();
-                        break;
-                    case 3:
-                        //color = ObtenerColor(Codigo);
-                        //color.Estado = true;
-                        //MessageBox.Show("Color Eliminado", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        usuario = ObtenerUsuario(Editar.txtUsuario.Text, Editar.txtClave.Text);
+                        usuario.Nombre = Editar.txtUsuario.Text;
+                        usuario.Clave = Editar.txtClave.Text;
+                        Editar.Close();
                         break;
                 }
                 Guardar();

@@ -14,6 +14,7 @@ namespace IndustriaCalzado.Vista.Turno
 {
     public partial class Nuevo : Form
     {
+        private int Codigo;
         public DataGridView Grilla;
         private TurnoController TurnoController;
         private HorarioController HorarioController;
@@ -24,9 +25,9 @@ namespace IndustriaCalzado.Vista.Turno
             TurnoController = new TurnoController("Turnos");
             HorarioController = new HorarioController("Horarios");
         }
-        private void Nuevo_Load(object sender, EventArgs e)
+        private void dgvHorarios_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            dgvHorarios.DataSource = HorarioController.Listado();
+            Codigo = Convert.ToInt32(dgvHorarios.Rows[e.RowIndex].Cells[1].Value.ToString());
         }
 
         #region Horario
@@ -39,28 +40,28 @@ namespace IndustriaCalzado.Vista.Turno
 
         private void btnEditar_Click(object sender, EventArgs e)
         {
-            //if (!string.IsNullOrEmpty(Sku))
-            //{
-            //    Modelo.Editar Editar = new Modelo.Editar();
-            //    Editar.Sku = Sku;
-            //    Editar.Grilla = dgvModelos;
-            //    Editar.Show();
-            //}
-            //else
-            //{
-            //    MessageBox.Show("Debe seleccionar un modelo", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            //}
+            if (Codigo!=0)
+            {
+                Vistas.Horario.Editar Editar = new Vistas.Horario.Editar();
+                Editar.Codigo = Codigo;
+                Editar.Grilla = dgvHorarios;
+                Editar.Show();
+            }
+            else
+            {
+                MessageBox.Show("Debe seleccionar un horario", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-            //Turno.ABM(3, null, null, Sku, Grilla = dgvModelos);
+            HorarioController.ABM(3, null, null, Codigo, dgvHorarios);
         }
         #endregion
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            TurnoController.Existe(this, Grilla,dgvHorarios);
+            TurnoController.Existe(1,this,null,Grilla,dgvHorarios);
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)

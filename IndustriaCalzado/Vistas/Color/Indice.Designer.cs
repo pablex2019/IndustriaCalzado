@@ -54,7 +54,6 @@
             this.dgvColores.Size = new System.Drawing.Size(321, 150);
             this.dgvColores.TabIndex = 1;
             this.dgvColores.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvColores_CellClick);
-            this.dgvColores.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvColores_CellContentClick);
             // 
             // btnNuevo
             // 
