@@ -25,6 +25,7 @@ namespace IndustriaCalzado.Vista.Perfil
         private void Indice_Load(object sender, EventArgs e)
         {
             dgvPerfiles.DataSource = PerfilController.Listado();
+            dgvPerfiles.Columns[2].Visible = false;
         }
         private void dgvPerfiles_CellClick(object sender, DataGridViewCellEventArgs e)
         {

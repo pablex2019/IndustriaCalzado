@@ -107,6 +107,12 @@
     <Compile Include="Vistas\Empleado\Nuevo.Designer.cs">
       <DependentUpon>Nuevo.cs</DependentUpon>
     </Compile>
+    <Compile Include="Vistas\Empleado\Ver.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vistas\Empleado\Ver.Designer.cs">
+      <DependentUpon>Ver.cs</DependentUpon>
+    </Compile>
     <Compile Include="Vistas\Horario\Editar.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -168,6 +174,12 @@
     </Compile>
     <Compile Include="Vistas\OrdenDeProduccion\Indice.Designer.cs">
       <DependentUpon>Indice.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\OrdenDeProduccion\Nuevo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vistas\OrdenDeProduccion\Nuevo.Designer.cs">
+      <DependentUpon>Nuevo.cs</DependentUpon>
     </Compile>
     <Compile Include="Vistas\Panel.cs">
       <SubType>Form</SubType>
@@ -235,6 +247,9 @@
     <EmbeddedResource Include="Vistas\Empleado\Nuevo.resx">
       <DependentUpon>Nuevo.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Vistas\Empleado\Ver.resx">
+      <DependentUpon>Ver.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Vistas\Horario\Editar.resx">
       <DependentUpon>Editar.cs</DependentUpon>
     </EmbeddedResource>
@@ -273,6 +288,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Vistas\OrdenDeProduccion\Indice.resx">
       <DependentUpon>Indice.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vistas\OrdenDeProduccion\Nuevo.resx">
+      <DependentUpon>Nuevo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Vistas\Panel.resx">
       <DependentUpon>Panel.cs</DependentUpon>

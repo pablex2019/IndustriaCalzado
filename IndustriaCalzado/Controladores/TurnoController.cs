@@ -50,10 +50,10 @@ namespace IndustriaCalzado.Controlador
             Leer();
             return ListaTurnos.Where(x => x.Estado != true).ToList();
         }
-        public TurnoModel ObtenerTurno(int Codigo)
+        public TurnoModel ObtenerTurno(string Descripcion)
         {
             Leer();
-            return ListaTurnos.FirstOrDefault(x => x.Codigo == Codigo && x.Estado == false);
+            return ListaTurnos.FirstOrDefault(x => x.Descripcion == Descripcion && x.Estado == false);
         }
         public void Existe(int Operacion,Vista.Turno.Nuevo Nuevo,Vista.Turno.Editar Editar, DataGridView GrillaTurno, DataGridView GrillaHorario)
         {
@@ -65,7 +65,7 @@ namespace IndustriaCalzado.Controlador
                     case 1:
                         if (ListaTurnos.Any(x => (x.Codigo == Convert.ToInt32(Nuevo.txtCodigo.Text) || x.Descripcion == Nuevo.txtDescripcion.Text) && x.Estado != true) == false)
                         {
-                            ABM(1, Nuevo, null, 0, GrillaTurno, GrillaHorario);
+                            ABM(1, Nuevo, null, "", GrillaTurno, GrillaHorario);
                         }
                         else
                         {
@@ -75,7 +75,7 @@ namespace IndustriaCalzado.Controlador
                     case 2:
                         if (ListaTurnos.Any(x => (x.Codigo == Convert.ToInt32(Editar.txtCodigo.Text) || x.Descripcion == Editar.txtDescripcion.Text) && x.Estado != true && GrillaHorario.RowCount==0) == false)
                         {
-                            ABM(2, null, Editar, Editar.Codigo, GrillaTurno, GrillaHorario);
+                            ABM(2, null, Editar, Editar.Descripcion, GrillaTurno, GrillaHorario);
                         }
                         else
                         {
@@ -92,11 +92,11 @@ namespace IndustriaCalzado.Controlador
         /// </summary>
         /// <param name="Operacion"></param>
         /// <param name="Nuevo"></param>
-        public void ABM(int Operacion, Vista.Turno.Nuevo Nuevo, Vista.Turno.Editar Editar, int Codigo, DataGridView GrillaTurnos,DataGridView GrillaHorarios)
+        public void ABM(int Operacion, Vista.Turno.Nuevo Nuevo, Vista.Turno.Editar Editar, string Descripcion, DataGridView GrillaTurnos,DataGridView GrillaHorarios)
         {
             TurnoModel turno = new TurnoModel();
             List<HorarioModel> ListadoHorarios = new List<HorarioModel>();
-            if (Codigo!=0 || Operacion != 3)
+            if (!string.IsNullOrEmpty(Descripcion) || Operacion != 3)
             {
                 switch (Operacion)
                 {
@@ -125,7 +125,7 @@ namespace IndustriaCalzado.Controlador
                         GrillaHorarios.DataSource = 0;
                         break;
                     case 2:
-                        turno = ObtenerTurno(Codigo);
+                        turno = ObtenerTurno(Descripcion);
                         turno.Codigo = Convert.ToInt32(Editar.txtCodigo.Text);
                         turno.Descripcion = Editar.txtDescripcion.Text;
                         for (int fila = 0; fila < GrillaHorarios.Rows.Count; fila++)
@@ -143,7 +143,7 @@ namespace IndustriaCalzado.Controlador
                         Editar.Close();
                         break;
                     case 3:
-                        turno = ObtenerTurno(Codigo);
+                        turno = ObtenerTurno(Descripcion);
                         turno.Estado = true;
                         MessageBox.Show("Turno Eliminado", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         break;

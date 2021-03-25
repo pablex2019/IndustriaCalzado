@@ -14,7 +14,7 @@ namespace IndustriaCalzado.Vistas.Turno
 {
     public partial class Ver : Form
     {
-        public int Codigo;
+        public string Descripcion;
         private TurnoController TurnoController;
         private HorarioController HorarioController;
 
@@ -27,7 +27,7 @@ namespace IndustriaCalzado.Vistas.Turno
 
         private void Ver_Load(object sender, EventArgs e)
         {
-            var turno = TurnoController.ObtenerTurno(Codigo);
+            var turno = TurnoController.ObtenerTurno(Descripcion);
             txtCodigo.Text = turno.Codigo.ToString();
             txtDescripcion.Text = turno.Descripcion;
             dgvHorarios.DataSource = HorarioController.Listado();

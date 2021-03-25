@@ -31,8 +31,8 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.mnuColor = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuModelo = new System.Windows.Forms.ToolStripMenuItem();
-            this.mnuTurno = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuPerfil = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuTurno = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuEmpleado = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuOrdenesDeProduccion = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuLineasDeTrabajo = new System.Windows.Forms.ToolStripMenuItem();
@@ -71,19 +71,19 @@
             this.mnuModelo.Text = "Modelos";
             this.mnuModelo.Click += new System.EventHandler(this.mnuModelo_Click);
             // 
-            // mnuTurno
-            // 
-            this.mnuTurno.Name = "mnuTurno";
-            this.mnuTurno.Size = new System.Drawing.Size(55, 20);
-            this.mnuTurno.Text = "Turnos";
-            this.mnuTurno.Click += new System.EventHandler(this.mnuTurno_Click);
-            // 
             // mnuPerfil
             // 
             this.mnuPerfil.Name = "mnuPerfil";
             this.mnuPerfil.Size = new System.Drawing.Size(57, 20);
             this.mnuPerfil.Text = "Perfiles";
             this.mnuPerfil.Click += new System.EventHandler(this.mnuPerfil_Click);
+            // 
+            // mnuTurno
+            // 
+            this.mnuTurno.Name = "mnuTurno";
+            this.mnuTurno.Size = new System.Drawing.Size(55, 20);
+            this.mnuTurno.Text = "Turnos";
+            this.mnuTurno.Click += new System.EventHandler(this.mnuTurno_Click);
             // 
             // mnuEmpleado
             // 
@@ -127,6 +127,7 @@
             this.Name = "Panel";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Panel";
+            this.Load += new System.EventHandler(this.Panel_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
@@ -137,13 +138,13 @@
         #endregion
 
         private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem mnuColor;
-        private System.Windows.Forms.ToolStripMenuItem mnuModelo;
-        private System.Windows.Forms.ToolStripMenuItem mnuEmpleado;
-        private System.Windows.Forms.ToolStripMenuItem mnuOrdenesDeProduccion;
-        private System.Windows.Forms.ToolStripMenuItem mnuLineasDeTrabajo;
         private System.Windows.Forms.ToolStripMenuItem mnuCerrarSesion;
-        private System.Windows.Forms.ToolStripMenuItem mnuPerfil;
-        private System.Windows.Forms.ToolStripMenuItem mnuTurno;
+        public System.Windows.Forms.ToolStripMenuItem mnuColor;
+        public System.Windows.Forms.ToolStripMenuItem mnuModelo;
+        public System.Windows.Forms.ToolStripMenuItem mnuEmpleado;
+        public System.Windows.Forms.ToolStripMenuItem mnuOrdenesDeProduccion;
+        public System.Windows.Forms.ToolStripMenuItem mnuLineasDeTrabajo;
+        public System.Windows.Forms.ToolStripMenuItem mnuPerfil;
+        public System.Windows.Forms.ToolStripMenuItem mnuTurno;
     }
 }

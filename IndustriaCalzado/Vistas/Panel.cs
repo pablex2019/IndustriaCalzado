@@ -1,4 +1,5 @@
 ﻿using IndustriaCalzado.Controlador;
+using IndustriaCalzado.Controladores;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,10 +14,15 @@ namespace IndustriaCalzado.Vista
 {
     public partial class Panel : Form
     {
+        public string Usuario;
+        public string Clave;
         private UsuarioController UsuarioController;
         private ColorController ColorController;
         private ModeloController ModeloController;
         private PerfilController PerfilController;
+        private TurnoController TurnoController;
+        private HorarioController HorarioController;
+        private EmpleadoController EmpleadoController;
 
         public Panel()
         {
@@ -25,6 +31,9 @@ namespace IndustriaCalzado.Vista
             ColorController = new ColorController("Colores");
             ModeloController = new ModeloController("Modelos");
             PerfilController = new PerfilController("Perfiles");
+            TurnoController = new TurnoController("Turnos");
+            HorarioController = new HorarioController("Horarios");
+            EmpleadoController = new EmpleadoController("Empleados");
         }
         private void mnuColor_Click(object sender, EventArgs e)
         {
@@ -32,10 +41,12 @@ namespace IndustriaCalzado.Vista
         }
         private void mnuCerrarSesion_Click(object sender, EventArgs e)
         {
-            UsuarioController.Salir("Usuarios", this);
+            //UsuarioController.Salir("Usuarios", this);
             ColorController.Salir("Colores");
             ModeloController.Salir("Modelos");
             PerfilController.Salir("Perfiles");
+            TurnoController.Salir("Turnos");
+            HorarioController.Salir("Horarios");
         }
 
         private void mnuModelo_Click(object sender, EventArgs e)
@@ -66,6 +77,11 @@ namespace IndustriaCalzado.Vista
         private void mnuOrdenesDeProduccion_Click(object sender, EventArgs e)
         {
             new Vista.LineaDeTrabajo.Indice().Show();
+        }
+
+        private void Panel_Load(object sender, EventArgs e)
+        {
+            EmpleadoController.Permisos(Usuario,Clave,this);
         }
     }
 }

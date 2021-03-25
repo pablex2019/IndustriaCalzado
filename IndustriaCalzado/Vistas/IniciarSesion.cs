@@ -1,5 +1,6 @@
 ﻿using IndustriaCalzado.Configuracion;
 using IndustriaCalzado.Controlador;
+using IndustriaCalzado.Controladores;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -18,6 +19,9 @@ namespace IndustriaCalzado
         private ColorController ColorController;
         private ModeloController ModeloController;
         private PerfilController PerfilController;
+        private TurnoController TurnoController;
+        private HorarioController HorarioController;
+        private EmpleadoController EmpleadoController;
 
         public IniciarSesion()
         {
@@ -26,6 +30,9 @@ namespace IndustriaCalzado
             ColorController = new ColorController("Colores");
             ModeloController = new ModeloController("Modelos");
             PerfilController = new PerfilController("Perfiles");
+            TurnoController = new TurnoController("Turnos");
+            EmpleadoController = new EmpleadoController("Empleados");
+            HorarioController = new HorarioController("Horarios");
         }
 
         private void btnEntrar_Click(object sender, EventArgs e)
@@ -39,6 +46,9 @@ namespace IndustriaCalzado
             ColorController.Salir("Colores");
             ModeloController.Salir("Modelos");
             PerfilController.Salir("Perfiles");
+            TurnoController.Salir("Turnos");
+            HorarioController.Salir("Horarios");
+            //EmpleadoController.Salir("Empelados");           
         }
     }
 }

@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace IndustriaCalzado.Controladores
 {
@@ -49,10 +50,64 @@ namespace IndustriaCalzado.Controladores
             Leer();
             return ListaLineasDeTrabajos.Where(x => x.Estado != true).ToList();
         }
-        public LineaDeTrabajoModel ObtenerColor(int Codigo)
+        public LineaDeTrabajoModel ObtenerLineaDeTrabajo(int NumeroLinea)
         {
             Leer();
-            return ListaLineasDeTrabajos.FirstOrDefault(x => x.Codigo == Codigo && x.Estado == false);
+            return ListaLineasDeTrabajos.FirstOrDefault(x => x.NumeroLinea == NumeroLinea && x.Estado == false);
+        }
+        public void Existe(int Operacion,Vista.LineaDeTrabajo.Nuevo Nuevo, DataGridView Grilla)
+        {
+            Leer();
+            if (ListaLineasDeTrabajos.Count >= 0)
+            {
+                switch (Operacion)
+                {
+                    case 1:
+                        if (ListaLineasDeTrabajos.Any(x => x.NumeroLinea == Convert.ToInt32(Nuevo.txtNumeroLinea.Text) && x.Estado == false) == false)
+                        {
+                            ABM(1, Nuevo, null, 0, Grilla);
+                        }
+                        else
+                        {
+                            MessageBox.Show("Ya existe la linea de trabajo", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                        break;
+                }
+            }
+        }
+        public void ABM(int Operacion, Vista.LineaDeTrabajo.Nuevo Nuevo, Vista.LineaDeTrabajo.Editar Editar, int NumeroDeLinea, DataGridView Grilla)
+        {
+            LineaDeTrabajoModel lineaDeTrabajoModel = new LineaDeTrabajoModel();
+            OrdenDeProduccionModel ordenDeProduccionModel = new OrdenDeProduccionModel();
+            if (NumeroDeLinea != 0 || Operacion != 3)
+            {
+                switch (Operacion)
+                {
+                    case 1:
+                        //lineaDeTrabajoModel.Id = ObtenerUltimoIdLineaDeTrabajo();
+                        //lineaDeTrabajoModel.NumeroLinea = Convert.ToInt32(Nuevo.txtNumeroLinea.Text);
+                        //lineaDeTrabajoModel.OrdenesDeProduccionModel.Add();
+                        //lineaDeTrabajoModel.Estado = false;
+                        //ListaLineasDeTrabajos.Add();
+                        break;
+                    case 2:
+                        
+                        break;
+                    case 3:
+                        
+                        break;
+                }
+                Guardar();
+                Grilla.DataSource = Listado();
+            }
+            else
+            {
+                MessageBox.Show("Debe seleccionar una linea de trabajo", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+        public void Salir(string valor)
+        {
+            AccesoADatos.Finalizar(valor);
         }
     }
 }

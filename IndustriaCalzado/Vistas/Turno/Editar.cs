@@ -15,6 +15,7 @@ namespace IndustriaCalzado.Vista.Turno
 {
     public partial class Editar : Form
     {
+        public string Descripcion;
         public int Codigo;
         public DataGridView Grilla;
         private TurnoController TurnoController;
@@ -29,7 +30,7 @@ namespace IndustriaCalzado.Vista.Turno
 
         private void Editar_Load(object sender, EventArgs e)
         {
-            var turno = TurnoController.ObtenerTurno(Codigo);
+            var turno = TurnoController.ObtenerTurno(Descripcion);
             txtCodigo.Text = turno.Codigo.ToString();
             txtDescripcion.Text = turno.Descripcion;
             dgvHorarios.DataSource = turno.HorarioModels.ToList();

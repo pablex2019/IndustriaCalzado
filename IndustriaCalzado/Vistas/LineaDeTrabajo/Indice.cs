@@ -18,7 +18,7 @@ namespace IndustriaCalzado.Vista.LineaDeTrabajo
         public Indice()
         {
             InitializeComponent();
-            LineaDeTrabajoController = new LineaDeTrabajoController("Linea de Trabajo");
+            LineaDeTrabajoController = new LineaDeTrabajoController("Lineas de Trabajos");
         }
         private void Indice_Load(object sender, EventArgs e)
         {

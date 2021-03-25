@@ -1,4 +1,5 @@
 ﻿using IndustriaCalzado.Configuracion;
+using IndustriaCalzado.Controlador;
 using IndustriaCalzado.Modelo;
 using Newtonsoft.Json;
 using System;
@@ -16,11 +17,13 @@ namespace IndustriaCalzado.Controladores
         private Global AccesoADatos { get; set; }
         private List<HorarioModel> ListaHorarios { get; set; }
         private string DatosHorarios;
+        private TurnoController TurnoController;
 
         public HorarioController(string _Archivo)
         {
             this.Archivo = _Archivo;
             this.AccesoADatos = new Global(this.Archivo);
+            TurnoController = new TurnoController("Turnos");
         }
         private void Leer()
         {
@@ -45,9 +48,18 @@ namespace IndustriaCalzado.Controladores
                 return ListaHorarios.Max(x => x.Id) + 1;
             }
         }
+        //
         public List<HorarioModel> Listado()
         {
             Leer();
+            //var listado = TurnoController.Listado();
+            //foreach(var i in listado)
+            //{
+            //    if(i.Codigo)
+            //    {
+            //        ListaHorarios = 
+            //    }
+            //}
             return ListaHorarios.Where(x => x.Estado != true).ToList();
         }
         public HorarioModel ObtenerHorario(int Codigo)

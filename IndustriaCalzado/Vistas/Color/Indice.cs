@@ -25,6 +25,7 @@ namespace IndustriaCalzado.Vista.Color
         private void Index_Load(object sender, EventArgs e)
         {
             dgvColores.DataSource = ColorController.Listado();
+            dgvColores.Columns[3].Visible = false;
         }
         private void dgvColores_CellClick(object sender, DataGridViewCellEventArgs e)
         {

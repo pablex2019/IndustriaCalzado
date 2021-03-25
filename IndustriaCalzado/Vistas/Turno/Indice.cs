@@ -14,7 +14,7 @@ namespace IndustriaCalzado.Vista.Turno
     public partial class Indice : Form
     {
         public DataGridView Grilla; 
-        private int Codigo;
+        private string Descripcion;
         private TurnoController TurnoController;
 
         public Indice()
@@ -25,15 +25,16 @@ namespace IndustriaCalzado.Vista.Turno
         private void Indice_Load(object sender, EventArgs e)
         {
             dgvTurnos.DataSource = TurnoController.Listado();
+            dgvTurnos.Columns[3].Visible = false;
         }
         private void dgvTurnos_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            Codigo = Convert.ToInt32(dgvTurnos.Rows[e.RowIndex].Cells[1].Value.ToString());
+            Descripcion = dgvTurnos.Rows[e.RowIndex].Cells[2].Value.ToString();
         }
         private void dgvTurnos_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             Vistas.Turno.Ver ver = new Vistas.Turno.Ver();
-            ver.Codigo = Codigo;
+            ver.Descripcion = Descripcion;
             ver.Show();
         }
         private void btnNuevo_Click(object sender, EventArgs e)
@@ -45,10 +46,10 @@ namespace IndustriaCalzado.Vista.Turno
 
         private void btnEditar_Click(object sender, EventArgs e)
         {
-            if (Codigo!=0)
+            if (!string.IsNullOrEmpty(Descripcion))
             {
                 Turno.Editar editar = new Editar();
-                editar.Codigo = Codigo;
+                editar.Descripcion = Descripcion;
                 editar.Grilla = dgvTurnos;
                 editar.Show();
             }
@@ -59,7 +60,7 @@ namespace IndustriaCalzado.Vista.Turno
         }
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-            TurnoController.ABM(3, null, null, Codigo, Grilla = dgvTurnos,null);
+            TurnoController.ABM(3, null, null, Descripcion, Grilla = dgvTurnos,null);
         }
         private void btnSalir_Click(object sender, EventArgs e)
         {

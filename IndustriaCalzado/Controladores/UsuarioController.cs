@@ -57,7 +57,10 @@ namespace IndustriaCalzado.Controlador
             {
                 if(ListaUsuarios.Any(x => x.Nombre == Nombre && x.Clave == Clave)==true)
                 {
-                    new Vista.Panel().Show();
+                    Vista.Panel panel = new Vista.Panel();
+                    panel.Usuario = Nombre;
+                    panel.Clave = Clave;
+                    panel.Show();
                     IniciarSesion.Hide();
                 }
                 else

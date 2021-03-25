@@ -25,6 +25,7 @@ namespace IndustriaCalzado.Vista.Modelo
         private void Indice_Load(object sender, EventArgs e)
         {
             dgvModelos.DataSource = ModeloController.Listado();
+            dgvModelos.Columns[4].Visible = false;
         }
         private void dgvModelos_CellClick(object sender, DataGridViewCellEventArgs e)
         {

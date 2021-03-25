@@ -1,1 +1,0 @@
-[{"Id":1,"Codigo":1,"Descripcion":"Turno Mañana","HorarioModels":[{"Id":1,"Codigo":1,"HoraDesde":"08:00","HoraHasta":"12:00","Estado":false}],"Estado":false},{"Id":2,"Codigo":2,"Descripcion":"Turno Tarde","HorarioModels":[],"Estado":false}]

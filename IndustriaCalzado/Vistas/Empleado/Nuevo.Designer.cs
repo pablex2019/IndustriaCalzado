@@ -48,8 +48,15 @@
             this.label9 = new System.Windows.Forms.Label();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnGuardar = new System.Windows.Forms.Button();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label10 = new System.Windows.Forms.Label();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.txtHoraDesde = new System.Windows.Forms.TextBox();
+            this.txtHoraHasta = new System.Windows.Forms.TextBox();
+            this.cboHorario = new System.Windows.Forms.ComboBox();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -65,7 +72,7 @@
             // 
             this.txtDocumento.Location = new System.Drawing.Point(16, 30);
             this.txtDocumento.Name = "txtDocumento";
-            this.txtDocumento.Size = new System.Drawing.Size(251, 20);
+            this.txtDocumento.Size = new System.Drawing.Size(211, 20);
             this.txtDocumento.TabIndex = 1;
             // 
             // label2
@@ -81,7 +88,7 @@
             // 
             this.txtNombre.Location = new System.Drawing.Point(16, 70);
             this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(251, 20);
+            this.txtNombre.Size = new System.Drawing.Size(211, 20);
             this.txtNombre.TabIndex = 3;
             // 
             // label3
@@ -97,7 +104,7 @@
             // 
             this.txtApellido.Location = new System.Drawing.Point(16, 109);
             this.txtApellido.Name = "txtApellido";
-            this.txtApellido.Size = new System.Drawing.Size(251, 20);
+            this.txtApellido.Size = new System.Drawing.Size(211, 20);
             this.txtApellido.TabIndex = 5;
             // 
             // label4
@@ -115,7 +122,7 @@
             this.cboSexo.FormattingEnabled = true;
             this.cboSexo.Location = new System.Drawing.Point(16, 189);
             this.cboSexo.Name = "cboSexo";
-            this.cboSexo.Size = new System.Drawing.Size(251, 21);
+            this.cboSexo.Size = new System.Drawing.Size(211, 21);
             this.cboSexo.TabIndex = 7;
             // 
             // label5
@@ -131,7 +138,7 @@
             // 
             this.txtCorreoElectronico.Location = new System.Drawing.Point(16, 149);
             this.txtCorreoElectronico.Name = "txtCorreoElectronico";
-            this.txtCorreoElectronico.Size = new System.Drawing.Size(251, 20);
+            this.txtCorreoElectronico.Size = new System.Drawing.Size(211, 20);
             this.txtCorreoElectronico.TabIndex = 9;
             // 
             // label6
@@ -149,7 +156,7 @@
             this.cboPerfil.FormattingEnabled = true;
             this.cboPerfil.Location = new System.Drawing.Point(16, 229);
             this.cboPerfil.Name = "cboPerfil";
-            this.cboPerfil.Size = new System.Drawing.Size(251, 21);
+            this.cboPerfil.Size = new System.Drawing.Size(211, 21);
             this.cboPerfil.TabIndex = 11;
             // 
             // label7
@@ -167,13 +174,14 @@
             this.cboTurno.FormattingEnabled = true;
             this.cboTurno.Location = new System.Drawing.Point(16, 269);
             this.cboTurno.Name = "cboTurno";
-            this.cboTurno.Size = new System.Drawing.Size(251, 21);
+            this.cboTurno.Size = new System.Drawing.Size(211, 21);
             this.cboTurno.TabIndex = 13;
+            this.cboTurno.SelectedIndexChanged += new System.EventHandler(this.cboTurno_SelectedIndexChanged);
             // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(13, 333);
+            this.label8.Location = new System.Drawing.Point(11, 425);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(43, 13);
             this.label8.TabIndex = 14;
@@ -181,23 +189,23 @@
             // 
             // txtUsuario
             // 
-            this.txtUsuario.Location = new System.Drawing.Point(16, 349);
+            this.txtUsuario.Location = new System.Drawing.Point(14, 441);
             this.txtUsuario.Name = "txtUsuario";
-            this.txtUsuario.Size = new System.Drawing.Size(251, 20);
+            this.txtUsuario.Size = new System.Drawing.Size(215, 20);
             this.txtUsuario.TabIndex = 15;
             // 
             // txtClave
             // 
-            this.txtClave.Location = new System.Drawing.Point(16, 388);
+            this.txtClave.Location = new System.Drawing.Point(14, 480);
             this.txtClave.Name = "txtClave";
             this.txtClave.PasswordChar = '*';
-            this.txtClave.Size = new System.Drawing.Size(251, 20);
+            this.txtClave.Size = new System.Drawing.Size(215, 20);
             this.txtClave.TabIndex = 17;
             // 
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(13, 372);
+            this.label9.Location = new System.Drawing.Point(11, 464);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(61, 13);
             this.label9.TabIndex = 16;
@@ -206,7 +214,7 @@
             // btnCancelar
             // 
             this.btnCancelar.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.btnCancelar.Location = new System.Drawing.Point(97, 415);
+            this.btnCancelar.Location = new System.Drawing.Point(95, 507);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(75, 23);
             this.btnCancelar.TabIndex = 19;
@@ -216,22 +224,13 @@
             // 
             // btnGuardar
             // 
-            this.btnGuardar.Location = new System.Drawing.Point(16, 415);
+            this.btnGuardar.Location = new System.Drawing.Point(14, 507);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(75, 23);
             this.btnGuardar.TabIndex = 18;
             this.btnGuardar.Text = "Guardar";
             this.btnGuardar.UseVisualStyleBackColor = true;
             this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(16, 309);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(251, 21);
-            this.comboBox1.TabIndex = 21;
             // 
             // label10
             // 
@@ -242,14 +241,81 @@
             this.label10.TabIndex = 20;
             this.label10.Text = "Horario";
             // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.cboHorario);
+            this.groupBox1.Controls.Add(this.txtHoraHasta);
+            this.groupBox1.Controls.Add(this.txtHoraDesde);
+            this.groupBox1.Controls.Add(this.label13);
+            this.groupBox1.Controls.Add(this.label12);
+            this.groupBox1.Controls.Add(this.label11);
+            this.groupBox1.Location = new System.Drawing.Point(16, 310);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(211, 112);
+            this.groupBox1.TabIndex = 23;
+            this.groupBox1.TabStop = false;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(15, 25);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(89, 13);
+            this.label11.TabIndex = 24;
+            this.label11.Text = "Ingrese el Codigo";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(15, 56);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(64, 13);
+            this.label12.TabIndex = 25;
+            this.label12.Text = "Hora Desde";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(107, 56);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(61, 13);
+            this.label13.TabIndex = 26;
+            this.label13.Text = "Hora Hasta";
+            // 
+            // txtHoraDesde
+            // 
+            this.txtHoraDesde.Enabled = false;
+            this.txtHoraDesde.Location = new System.Drawing.Point(18, 72);
+            this.txtHoraDesde.Name = "txtHoraDesde";
+            this.txtHoraDesde.Size = new System.Drawing.Size(86, 20);
+            this.txtHoraDesde.TabIndex = 27;
+            // 
+            // txtHoraHasta
+            // 
+            this.txtHoraHasta.Enabled = false;
+            this.txtHoraHasta.Location = new System.Drawing.Point(110, 72);
+            this.txtHoraHasta.Name = "txtHoraHasta";
+            this.txtHoraHasta.Size = new System.Drawing.Size(86, 20);
+            this.txtHoraHasta.TabIndex = 28;
+            // 
+            // cboHorario
+            // 
+            this.cboHorario.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboHorario.FormattingEnabled = true;
+            this.cboHorario.Location = new System.Drawing.Point(105, 22);
+            this.cboHorario.Name = "cboHorario";
+            this.cboHorario.Size = new System.Drawing.Size(91, 21);
+            this.cboHorario.TabIndex = 24;
+            this.cboHorario.SelectedIndexChanged += new System.EventHandler(this.cboHorario_SelectedIndexChanged);
+            // 
             // Nuevo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ClientSize = new System.Drawing.Size(283, 451);
+            this.ClientSize = new System.Drawing.Size(241, 547);
             this.ControlBox = false;
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnGuardar);
@@ -278,6 +344,8 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Empleado - Nuevo";
             this.Load += new System.EventHandler(this.Nuevo_Load);
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -305,7 +373,13 @@
         public System.Windows.Forms.ComboBox cboTurno;
         public System.Windows.Forms.TextBox txtUsuario;
         public System.Windows.Forms.TextBox txtClave;
-        public System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Label label11;
+        public System.Windows.Forms.TextBox txtHoraHasta;
+        public System.Windows.Forms.TextBox txtHoraDesde;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label label12;
+        public System.Windows.Forms.ComboBox cboHorario;
     }
 }

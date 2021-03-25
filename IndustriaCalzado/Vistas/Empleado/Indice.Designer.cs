@@ -54,6 +54,7 @@
             this.dgvEmpleado.Size = new System.Drawing.Size(478, 139);
             this.dgvEmpleado.TabIndex = 1;
             this.dgvEmpleado.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvEmpleado_CellClick);
+            this.dgvEmpleado.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvEmpleado_CellDoubleClick);
             // 
             // btnSalir
             // 
@@ -114,6 +115,7 @@
             this.Name = "Indice";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Empleado - Indice";
+            this.Load += new System.EventHandler(this.Indice_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvEmpleado)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -1,4 +1,5 @@
 ﻿using IndustriaCalzado.Configuracion;
+using IndustriaCalzado.Controladores;
 using IndustriaCalzado.Modelo;
 using Newtonsoft.Json;
 using System;
@@ -19,6 +20,7 @@ namespace IndustriaCalzado.Controlador
         private PerfilController PerfilController;
         private TurnoController TurnoController;
         private UsuarioController UsuarioController;
+        private HorarioController HorarioController;
 
         public EmpleadoController(string _Archivo)
         {
@@ -27,6 +29,7 @@ namespace IndustriaCalzado.Controlador
             PerfilController = new PerfilController("Perfiles");
             TurnoController = new TurnoController("Turnos");
             UsuarioController = new UsuarioController("Usuarios");
+            HorarioController = new HorarioController("Horarios");
         }
         private void Leer()
         {
@@ -60,6 +63,18 @@ namespace IndustriaCalzado.Controlador
         {
             Leer();
             return ListaEmpleados.FirstOrDefault(x => x.Documento == Documento);
+        }
+        public string ObtenerPerfilEmpleado(string Usuario)
+        {
+            Leer();
+            if(Usuario!="admin")
+            {
+                return ListaEmpleados.FirstOrDefault(x => x.UsuarioModel.Nombre == Usuario).PerfilModel.Descripcion;
+            }
+            else
+            {
+                return "Administrativo";
+            }
         }
         public void Existe(Vista.Empleado.Nuevo Nuevo, DataGridView Grilla)
         {
@@ -97,47 +112,80 @@ namespace IndustriaCalzado.Controlador
                         empleado.CorreoElectronico = Nuevo.txtCorreoElectronico.Text;
                         empleado.Sexo = Nuevo.cboSexo.Text;
                         empleado.PerfilModel = PerfilController.ObtenerPerfil(Nuevo.cboPerfil.Text);
-                        //empleado.TurnoModel = TurnoController.ObtenerTurno(Nuevo.cboTurno.Text);
                         UsuarioController.ABM(1, Nuevo, null, empleado.Documento);
                         empleado.UsuarioModel = UsuarioController.ObtenerUsuario(Nuevo.txtUsuario.Text, Nuevo.txtClave.Text);
+                        empleado.TurnoModel = TurnoController.ObtenerTurno(Nuevo.cboTurno.Text);
+                        empleado.HorarioModel = HorarioController.ObtenerHorario(Convert.ToInt32(Nuevo.cboHorario.Text));
                         empleado.Estado = false;
                         ListaEmpleados.Add(empleado);
                         MessageBox.Show("Empleado Agregado", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        Grilla.DataSource = ListaEmpleados.ToList();
+                        Nuevo.txtDocumento.Text = string.Empty;
+                        Nuevo.txtNombre.Text = string.Empty;
+                        Nuevo.txtApellido.Text = string.Empty;
+                        Nuevo.txtCorreoElectronico.Text = string.Empty;
+                        Nuevo.txtUsuario.Text = string.Empty;
+                        Nuevo.txtClave.Text = string.Empty;
                         break;
                     case 2:
                         var _empleado = ObtenerEmpleado(Documento);
                         _empleado.Documento = Convert.ToInt32(Editar.txtDocumento.Text);
-                        empleado.Id = ObtenerUltimoIdEmpleado();
-                        empleado.Documento = Convert.ToInt32(Nuevo.txtDocumento.Text);
-                        empleado.Nombres = Nuevo.txtNombre.Text;
-                        empleado.Apellidos = Nuevo.txtApellido.Text;
-                        empleado.CorreoElectronico = Nuevo.txtCorreoElectronico.Text;
-                        empleado.Sexo = Nuevo.cboSexo.Text;
-                        empleado.PerfilModel = PerfilController.ObtenerPerfil(Nuevo.cboPerfil.Text);
+                        //empleado.Id = ObtenerUltimoIdEmpleado();
+                        //empleado.Documento = Convert.ToInt32(Nuevo.txtDocumento.Text);
+                        //empleado.Nombres = Nuevo.txtNombre.Text;
+                        //empleado.Apellidos = Nuevo.txtApellido.Text;
+                        //empleado.CorreoElectronico = Nuevo.txtCorreoElectronico.Text;
+                        //empleado.Sexo = Nuevo.cboSexo.Text;
+                        //empleado.PerfilModel = PerfilController.ObtenerPerfil(Nuevo.cboPerfil.Text);
                         //empleado.TurnoModel = TurnoController.ObtenerTurno(Nuevo.cboTurno.Text);
-                        UsuarioController.ABM(1, Nuevo, null, empleado.Documento);
-                        empleado.UsuarioModel = UsuarioController.ObtenerUsuario(Nuevo.txtUsuario.Text, Nuevo.txtClave.Text);
-                        empleado.Estado = false;
-                        ListaEmpleados.Add(empleado);
-                        MessageBox.Show("Empleado Agregado", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        Grilla.DataSource = ListaEmpleados.ToList();
+                        //UsuarioController.ABM(1, Nuevo, null, empleado.Documento);
+                        //empleado.UsuarioModel = UsuarioController.ObtenerUsuario(Nuevo.txtUsuario.Text, Nuevo.txtClave.Text);
+                        //empleado.Estado = false;
+                        //ListaEmpleados.Add(empleado);
+                        //MessageBox.Show("Empleado Agregado", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        //Grilla.DataSource = ListaEmpleados.ToList();
                         break;
                     case 3:
-                        empleado.Id = ObtenerUltimoIdEmpleado();
-                        UsuarioController.ABM(1, Nuevo, null, empleado.Documento);
-                        empleado.UsuarioModel = UsuarioController.ObtenerUsuario(Nuevo.txtUsuario.Text, Nuevo.txtClave.Text);
-                        empleado.Estado = false;
-                        ListaEmpleados.Add(empleado);
-                        MessageBox.Show("Empleado Agregado", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        Grilla.DataSource = ListaEmpleados.ToList();
+                        empleado = ObtenerEmpleado(Documento);
+                        //UsuarioController.ABM(1, Nuevo, null, empleado.Documento);
+                        //empleado.UsuarioModel = UsuarioController.ObtenerUsuario(Nuevo.txtUsuario.Text, Nuevo.txtClave.Text);
+                        empleado.Estado = true;
+                        MessageBox.Show("Empleado Eliminado", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        Grilla.DataSource = Listado();
                         break;
                 }
                 Guardar();
+                Grilla.DataSource = Listado();
             }
             else
             {
                  MessageBox.Show("Debe seleccionar un empleado", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+        public void Salir(string valor)
+        {
+            AccesoADatos.Finalizar(valor);
+        }
+        public void Permisos(string NombreUsuario,string clave,Vista.Panel panel)
+        {
+            var usuario = UsuarioController.ObtenerUsuario(NombreUsuario, clave);
+            string perfil = ObtenerPerfilEmpleado(usuario.Nombre);
+            switch(perfil)
+            {
+                case "Supervisor de Linea":
+                    panel.mnuEmpleado.Visible = false;
+                    panel.mnuColor.Visible = false;
+                    panel.mnuModelo.Visible = false;
+                    panel.mnuPerfil.Visible = false;
+                    panel.mnuTurno.Visible = false;
+                    break;
+                case "Supervisor de Calidad":
+                    panel.mnuEmpleado.Visible = false;
+                    panel.mnuLineasDeTrabajo.Visible = false;
+                    panel.mnuColor.Visible = false;
+                    panel.mnuModelo.Visible = false;
+                    panel.mnuPerfil.Visible = false;
+                    panel.mnuTurno.Visible = false;
+                    break;
             }
         }
     }
